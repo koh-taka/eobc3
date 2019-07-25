@@ -68,7 +68,9 @@
 #category_area li.level5 > a {
     padding-left: 30px;
 }
-
+#category_area .nav-pills > li > a > .badge{
+    margin-bottom: 3px;
+}
 
 /* ===============================================
 ▼ガイドリンク
