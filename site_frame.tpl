@@ -48,7 +48,6 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="<!--{$smarty.const.HTTP_URL}-->rss/<!--{$smarty.const.DIR_INDEX_PATH}-->" />
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.js"></script>
-<!-- #2342 次期メジャーバージョン(2.14)にてeccube.legacy.jsは削除予定.モジュール、プラグインの互換性を考慮して2.13では残します. -->
 <script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.legacy.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-colorbox@1.6.4/jquery.colorbox-min.js"></script>
 <!--{if $tpl_page_class_name === "LC_Page_Abouts"}-->
@@ -76,13 +75,11 @@
     <!--{$tpl_javascript}-->
     $(function(){
         <!--{$tpl_onload}-->
-        // off canvas button
         $(document).on('click', '.toggle-offcanvas', function(){
             $('.row-offcanvas').toggleClass('active');
             return false;
         });
 
-        // swipe event
         $("#main_column, #rightcolumn").on("touchstart", TouchStart);
         $("#main_column, #rightcolumn").on("touchmove" , TouchMove);
 
@@ -99,23 +96,18 @@
             $("#main_column").data("memory",pos.x);
         }
         function TouchMove( event ) {
-            var pos = Position(event); //X,Yを得る
+            var pos = Position(event);
             var start = $("#main_column").data("memory");
             var range = start - pos.x;
             if( range > 50){
-                // 左に移動
-                $('.row-offcanvas').removeClass('active');
+                $('.row-offcanvas').removeClass('active'); // 左に移動
             } else if (start < 30 && range < -10){
-                // 右に移動
-                $('.row-offcanvas').addClass('active');
+                $('.row-offcanvas').addClass('active'); // 右に移動
             }
         }
 
-        // input clear
         $(".input-clear").inputClear();
-        // tooltip
         $('[data-toggle=tooltip]').tooltip();
-        // pagetop
         var pageTop = function(){
             $((navigator.userAgent.indexOf("Opera") != -1) ? document.compatMode == 'BackCompat' ? 'body' : 'html' :'html,body').animate({scrollTop:0}, 'slow');
             return false;
@@ -125,25 +117,6 @@
             return false;
         };
         $("a[href^=#top]").click(pageTop);
-
-        // vimize
-        $().vimize({
-            homePagePath: '/',
-            searchBoxSelector: 'input#header-search',
-            selectors: {
-                0: '#category_area a',
-                1: '#product-list-wrap a, .navi a, #main_column a',
-            },
-            defaultSelectors: 1,
-            command: {
-                CAT: function(){
-                    window.location.href = 'https://www.google.co.jp/search?tbm=isch&q=cat';
-                }
-            },
-            commandError: function(e){
-                alert(e);
-            }
-        });
     });
 //]]></script>
 
