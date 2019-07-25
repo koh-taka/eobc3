@@ -53,7 +53,7 @@
                 <!--{* ▲HeaderInternal COLUMN *}-->
                 </div>
                 <div id="header_navi" class="collapse navbar-collapse">
-                    <div class="navbar-form navbar-left hidden-xs hidden-sm">
+                    <div class="navbar-form navbar-left hidden-xs hidden-sm hidden-md">
                         <form role="search" name="search_form" id="header_search_form" method="get" action="<!--{$smarty.const.ROOT_URLPATH}-->
                             products/list.php">
                             <input type="hidden" name="<!--{$smarty.const.TRANSACTION_ID_NAME}-->" value="<!--{$transactionid}-->" />
@@ -145,7 +145,7 @@
     </div>
 
     <!-- for small mobile -->
-    <section id="mobile-nav" class="hidden-md hidden-lg">
+    <section id="mobile-nav" class="hidden-lg">
         <div class="container margin-bottom-lg">
             <form name="search_form" method="get" action="<!--{$smarty.const.ROOT_URLPATH}-->products/list.php">
                 <div class="input-group">
@@ -158,7 +158,7 @@
                 </div>
             </form>
         </div>
-        <nav class="navbar navbar-default hidden-sm" role="navigation">
+        <nav class="navbar navbar-default hidden-md hidden-sm" role="navigation">
           <div class="container text-center">
             <ul class="nav navbar-nav">
                 <li class="col-xs-3">
