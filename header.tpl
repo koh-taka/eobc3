@@ -70,19 +70,20 @@
                         <!--{if $smarty.session.customer}-->
                         <li class="mypage dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                ようこそ <!--{$smarty.session.customer.name01}--><!--{$smarty.session.customer.name02}--> 様
+                                <!--{* 氏名を表示させる際は以下をコメントアウト *}-->
+                                <!--{* ようこそ <!--{$smarty.session.customer.name01}--><!--{$smarty.session.customer.name02}--> 様 *}-->
+                                ようこそ 会員様
                                 <br />
                                 <span class="font-size-md">
-                                    <span class="glyphicon glyphicon-user"></span> アカウントサービス<span class="caret"></span>
+                                    <span class="glyphicon glyphicon-user"></span> MYページ<span class="caret"></span>
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
+                                <a href="<!--{$smarty.const.HTTPS_URL}-->mypage/login.php">
                                 <li class="dropdown-header">
-                                    アカウントサービス
+                                    <span class="glyphicon glyphicon-user"></span> MYページ
                                 </li>
-                                <li>
-                                    <a href="<!--{$smarty.const.HTTPS_URL}-->mypage/login.php"><span class="glyphicon glyphicon-user"></span> MYページ</a>
-                                </li>
+                                </a>
                                 <li>
                                     <a href="<!--{$smarty.const.HTTPS_URL}-->mypage/login.php"><span class="fa fa-clock-o"></span> 購入履歴</a>
                                 </li>
@@ -99,9 +100,8 @@
                                     <a href="<!--{$smarty.const.HTTPS_URL}-->mypage/delivery.php"><span class="fa fa-truck"></span> お届け先追加・変更</a>
                                 </li>
                                 <li class="divider"></li>
-                                <li class="dropdown-header">
-                                    <!--{$smarty.session.customer.name01}--><!--{$smarty.session.customer.name02}-->さんではありませんか？
-                                </li>
+                                <!--{* 氏名を表示させる際は以下をコメントアウト *}-->
+                                <!--{* <li class="dropdown-header"><!--{$smarty.session.customer.name01}--><!--{$smarty.session.customer.name02}-->様ではありませんか？</li> *}-->
                                 <li>
                                     <a href="<!--{$smarty.const.HTTPS_URL}-->frontparts/login_check.php?mode=logout"><span class="glyphicon glyphicon-log-out"></span> ログアウト</a>
                                 </li>
