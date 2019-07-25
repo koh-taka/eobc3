@@ -157,6 +157,7 @@ div#undercolumn_error .message_area .error {
         padding: 0;
         height: 275px;
         overflow: hidden;
+        width: 148px;
     }
     #product-list-wrap div.caption {
         height: 115px;
@@ -197,6 +198,7 @@ div#undercolumn_error .message_area .error {
     }
     #product-list-wrap div.list_area > a.thumbnail {
         height: 315px;
+        width: 160px;
     }
     #product-list-wrap div.caption {
         height: 125px;
@@ -228,6 +230,7 @@ div#undercolumn_error .message_area .error {
     }
     #product-list-wrap div.list_area > a.thumbnail {
         height: 330px;
+        width: 200px;
     }
 }
 /*div.list_area {}*/
