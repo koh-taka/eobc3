@@ -66,28 +66,17 @@
                             </div>
                         </form>
                     </div>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right">       
+                        <!--{if $smarty.session.customer}-->
                         <li class="mypage dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                こんにちは
-                                <!--{if $smarty.session.customer}-->
-                                、<!--{$smarty.session.customer.name01}--><!--{$smarty.session.customer.name02}-->さん
-                                <!--{else}-->
-                                。ログイン
-                                <!--{/if}-->
+                                ようこそ <!--{$smarty.session.customer.name01}--><!--{$smarty.session.customer.name02}--> 様
                                 <br />
                                 <span class="font-size-md">
                                     <span class="glyphicon glyphicon-user"></span> アカウントサービス<span class="caret"></span>
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <!--{if !$smarty.session.customer}-->
-                                <li class="dropdown-header">
-                                    <a href="<!--{$smarty.const.HTTPS_URL}-->mypage/login.php" class="btn btn-default">ログイン</a>
-                                    <span>はじめてのご利用ですか？<a href="<!--{$smarty.const.ROOT_URLPATH}-->entry/kiyaku.php">新規登録はこちら</a></span>
-                                </li>
-                                <li class="divider"></li>
-                                <!--{/if}-->
                                 <li class="dropdown-header">
                                     アカウントサービス
                                 </li>
@@ -100,7 +89,6 @@
                                 <li>
                                     <a href="<!--{$smarty.const.HTTPS_URL}-->mypage/favorite.php"><span class="fa fa-star"></span> お気に入り</a>
                                 </li>
-                                <!--{if $smarty.session.customer}-->
                                 <li class="dropdown-header">
                                     設定
                                 </li>
@@ -110,22 +98,26 @@
                                 <li>
                                     <a href="<!--{$smarty.const.HTTPS_URL}-->mypage/delivery.php"><span class="fa fa-truck"></span> お届け先追加・変更</a>
                                 </li>
-                                <!--{/if}-->
                                 <li class="divider"></li>
-                                <!--{if $smarty.session.customer}-->
                                 <li class="dropdown-header">
                                     <!--{$smarty.session.customer.name01}--><!--{$smarty.session.customer.name02}-->さんではありませんか？
                                 </li>
                                 <li>
                                     <a href="<!--{$smarty.const.HTTPS_URL}-->frontparts/login_check.php?mode=logout"><span class="glyphicon glyphicon-log-out"></span> ログアウト</a>
                                 </li>
-                                <!--{else}-->
-                                <li>
-                                    <a href="<!--{$smarty.const.HTTPS_URL}-->mypage/login.php"><span class="glyphicon glyphicon-log-in"></span> ログイン</a>
-                                </li>
-                                <!--{/if}-->
                             </ul>
                         </li>
+                        <!--{else}-->
+                        <li>
+                            <a href="<!--{$smarty.const.HTTPS_URL}-->mypage/login.php">
+                                会員様はこちらから<br>
+                                <span class="font-size-md">
+                                    <span class="glyphicon glyphicon-log-in"></span> MYページにログイン<span class="caret"></span>
+                                </span>
+                            </a>
+                        </li>
+                        <!--{/if}-->
+
                         <li class="hidden-xs">
                             <a href="<!--{$smarty.const.CART_URL}-->">
                                 <br />
