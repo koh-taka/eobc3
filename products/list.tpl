@@ -184,9 +184,9 @@
                                 <span class="price">
                                     <span id="price02_default_<!--{$id}-->"><!--{strip}-->
                                         <!--{if $arrProduct.price02_min_inctax == $arrProduct.price02_max_inctax}-->
-                                            <!--{$arrProduct.price02_min_inctax|number_format}-->円
+                                            <!--{$arrProduct.price02_min_inctax|number_format}--><span class="yen">円</span><span class="inctax">(税込)</span>
                                         <!--{else}-->
-                                            <!--{$arrProduct.price02_min_inctax|number_format}-->円～
+                                            <!--{$arrProduct.price02_min_inctax|number_format}--><span class="yen">円</span><span class="inctax">(税込)</span>～
                                         <!--{/if}-->
                                     </span><!--{/strip}-->
                                 </span>

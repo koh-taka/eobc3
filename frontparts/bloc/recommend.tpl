@@ -42,7 +42,7 @@
                             <div class="caption">
                                 <h4><!--{$arrProduct.name|mb_substr:0:21|h}--><!--{if $arrProduct.name|mb_strlen > 21}-->..<!--{/if}--></h4>
                                 <p class="sale_price">
-                                <!--{$smarty.const.SALE_PRICE_TITLE}-->(税込)： <span class="price"><!--{$arrProduct.price02_min_inctax|number_format}--> 円</span>
+                                    <span class="price"><!--{$arrProduct.price02_min_inctax|number_format}--> <span class="yen">円</span><span class="inctax">(税込)</span></span>
                                 </p>
                                 <p class="mini comment"><!--{$arrProduct.comment|h|nl2br|mb_substr:0:19}--><!--{if $arrProduct.comment|mb_strlen > 19}-->..<!--{/if}--></p>
                             </div>

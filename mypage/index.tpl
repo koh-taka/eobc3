@@ -47,7 +47,7 @@
                             <div class=""><strong>購入日時：</strong><!--{$arrOrder[cnt].create_date|sfDispDBDate}--></div>
                             <!--{assign var=payment_id value="`$arrOrder[cnt].payment_id`"}-->
                             <div class=""><strong>お支払い方法：</strong><!--{$arrPayment[$payment_id]|h}--></div>
-                            <div class=""><strong>合計金額：</strong><!--{$arrOrder[cnt].payment_total|number_format}-->円</div>
+                            <div class=""><strong>合計金額：</strong><!--{$arrOrder[cnt].payment_total|number_format}--><span class="yen">円</span><span class="inctax">(税込)</span></div>
 
                             <!--{if $smarty.const.MYPAGE_ORDER_STATUS_DISP_FLAG }-->
                                 <!--{assign var=order_status_id value="`$arrOrder[cnt].status`"}-->

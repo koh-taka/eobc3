@@ -127,7 +127,7 @@
                     <div><small>送料：</small><!--{assign var=key value="deliv_fee"}--><!--{$tpl_arrOrderData[$key]|number_format|h}-->円</div>
                     <!--{assign var=key value="charge"}-->
                     <div><small>手数料：</small><!--{$tpl_arrOrderData[$key]|number_format|h}-->円</div>
-                    <div><small>合計：</small><span class="price text-bold"><!--{$tpl_arrOrderData.payment_total|number_format}-->円</span></div>
+                    <div><small>合計：</small><span class="price text-bold"><!--{$tpl_arrOrderData.payment_total|number_format}--><span class="yen">円</span><span class="inctax">(税込)</span></span></div>
 
                 <!-- 使用ポイントここから -->
                 <!--{if $smarty.const.USE_POINT !== false}-->

@@ -42,7 +42,7 @@
         <h2 class="title"><!--{$tpl_title|h}--></h2>
 
         <p class="information">下記ご注文内容で送信してもよろしいでしょうか？<br />
-            よろしければ、「<!--{if $use_module}-->次へ<!--{else}-->ご注文完了ページへ<!--{/if}-->」ボタンをクリックしてください。</p>
+            よろしければ、「<!--{if $use_module}-->次へ<!--{else}-->この内容で注文する<!--{/if}-->」ボタンをクリックしてください。</p>
 
         <form name="form1" id="form1" method="post" action="?">
             <input type="hidden" name="<!--{$smarty.const.TRANSACTION_ID_NAME}-->" value="<!--{$transactionid}-->" />
@@ -100,7 +100,7 @@
                     <small>手数料：</small><strong><!--{$arrForm.charge|number_format}-->円</strong><br />
                 </div>
                 <div class="list-group-item panel-footer text-right">
-                    <small>合計：</small><strong class="price"><!--{$arrForm.payment_total|number_format}-->円</strong>
+                    <small>合計：</small><strong class="price"><!--{$arrForm.payment_total|number_format}--><span class="yen">円</span><span class="inctax">(税込)</span></strong>
                 </div>
             </div>
 
@@ -322,7 +322,7 @@
                 <!--{if $use_module}-->
                 <button name="next" id="next" class="btn btn-primary btn-block xs-btn-lg sm-btn-lg">次へ</button>
                 <!--{else}-->
-                    <button name="next" id="next" class="btn btn-primary btn-block xs-btn-lg sm-btn-lg">ご注文確定</button>
+                    <button name="next" id="next" class="btn btn-primary btn-block xs-btn-lg sm-btn-lg">この内容で注文する</button>
                 <!--{/if}-->
                 </div>
                 <div class="col-xs-12 visible-xs margin-top-sm">

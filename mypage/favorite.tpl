@@ -63,7 +63,7 @@
                                             <!--{$arrFavorite[cnt].price02_min_inctax|number_format}-->
                                         <!--{else}-->
                                             <!--{$arrFavorite[cnt].price02_min_inctax|number_format}-->～<!--{$arrFavorite[cnt].price02_max_inctax|number_format}-->
-                                        <!--{/if}-->円</span>
+                                        <!--{/if}--><span class="yen">円</span><span class="inctax">(税込)</span></span>
                                 </div>
                             </div>
                             <div class="col-xs-2 text-right">

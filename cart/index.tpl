@@ -146,7 +146,7 @@
                             <div class="list-group-item panel-footer clearfix">
                                 <div class="col-xs-12 text-right">
                                     <small>合計: </small>
-                                    <span class="price"><!--{$arrData[$key].total-$arrData[$key].deliv_fee|number_format|h}-->円</span>
+                                    <span class="price"><!--{$arrData[$key].total-$arrData[$key].deliv_fee|number_format|h}--><span class="yen">円</span><span class="inctax">(税込)</span></span>
                                 </div>
 
                                 <!--{if $smarty.const.USE_POINT !== false}-->
