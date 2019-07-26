@@ -19,17 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *}-->
-<script>
-    $(function(){
-        $('#owl-container').owlCarousel({
-            items: 4
-            ,itemsDesktop: [1199,3]
-            ,itemsDesktopSmall: [992,3]
-            ,itemsTablet: [768,3]
-            ,itemsMobile: [491,2]
-        });
-    });
-</script>
+ 
 <!--{strip}-->
     <!--{if count($arrBestProducts) > 0}-->
         <div class="block_outer">
@@ -44,23 +34,20 @@
                         </small>
                     </h2>
                 </div>
-                <div id="owl-container" class="owl-carousel">
+                <div class="clearfix">
                     <!--{foreach from=$arrBestProducts item=arrProduct name="recommend_products"}-->
-                        <div class="product_item col-xs-12 padding-xs">
-                            <a href="<!--{$smarty.const.P_DETAIL_URLPATH}--><!--{$arrProduct.product_id|u}-->" class="thumbnail">
-                                <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_image|sfNoImageMainList|h}-->" alt="<!--{$arrProduct.name|h}-->" class="img-responsive img-rounded" />
-                                <div class="caption">
-                                    <h4 class="recommend-title"><!--{$arrProduct.name|h}--></h4>
-                                    <p class="recommend-price sale_price">
-                                    <!--{$smarty.const.SALE_PRICE_TITLE}-->(税込)： <span class="price"><!--{$arrProduct.price02_min_inctax|number_format}--> 円</span>
-                                    </p>
-                                    <p class="recommend-comment mini comment"><!--{$arrProduct.comment|h|nl2br}--></p>
-                                </div>
-                            </a>
-                        </div>
-                        <!--{if $smarty.foreach.recommend_products.iteration % 2 === 0}-->
-                            <!-- <div class="clear"></div> -->
-                        <!--{/if}-->
+                    <div class="col-sm-4 col-md-3">
+                        <a href="<!--{$smarty.const.P_DETAIL_URLPATH}--><!--{$arrProduct.product_id|u}-->" class="thumbnail">
+                            <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_image|sfNoImageMainList|h}-->" alt="<!--{$arrProduct.name|h}-->" class="img-responsive img-rounded" />
+                            <div class="caption">
+                                <h4><!--{$arrProduct.name|mb_substr:0:21|h}--><!--{if $arrProduct.name|mb_strlen > 21}-->..<!--{/if}--></h4>
+                                <p class="sale_price">
+                                <!--{$smarty.const.SALE_PRICE_TITLE}-->(税込)： <span class="price"><!--{$arrProduct.price02_min_inctax|number_format}--> 円</span>
+                                </p>
+                                <p class="mini comment"><!--{$arrProduct.comment|h|nl2br|mb_substr:0:19}--><!--{if $arrProduct.comment|mb_strlen > 19}-->..<!--{/if}--></p>
+                            </div>
+                        </a>
+                    </div>
                     <!--{/foreach}-->
                 </div>
             </div>

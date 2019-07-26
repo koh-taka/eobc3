@@ -141,32 +141,6 @@
     height: 40px;
     overflow: hidden;
 }
-
-/*#recommend_area .block_body,
-#whobought_area .product_item {
-    padding: 10px 0 10px;
-    border: none;
-    background: url("../img/background/line_dot_01.gif") repeat-x bottom;
+#recommend_area .thumbnail {
+    height: 400px;
 }
-
-#recommend_area .block_body p,
-#whobought_area .product_item p {
-    margin: 0 0 5px 0;
-}
-
-#recommend_area .block_body img,
-#whobought_area .product_item img {
-    margin: 0 5px 0 0;
-}
-
-#recommend_area .block_body h3,
-#whobought_area .product_item h3 {
-    font-size: 100%;
-    font-weight: normal;
-}
-*/
-/* サイドカラム用 */
-/*.side_column #recommend_area .product_item {
-    margin-bottom: 10px;
-}
-*/
