@@ -35,23 +35,6 @@
             </div>
 
             <div id="header_utility">
-                <div id="headerInternalColumn">
-                <!--{* ▼HeaderInternal COLUMN *}-->
-                <!--{if $arrPageLayout.HeaderInternalNavi|@count > 0}-->
-                    <!--{* ▼上ナビ *}-->
-                    <!--{foreach key=HeaderInternalNaviKey item=HeaderInternalNaviItem from=$arrPageLayout.HeaderInternalNavi}-->
-                        <!-- ▼<!--{$HeaderInternalNaviItem.bloc_name}--> -->
-                        <!--{if $HeaderInternalNaviItem.php_path != ""}-->
-                            <!--{include_php file=$HeaderInternalNaviItem.php_path items=$HeaderInternalNaviItem}-->
-                        <!--{else}-->
-                            <!--{include file=$HeaderInternalNaviItem.tpl_path items=$HeaderInternalNaviItem}-->
-                        <!--{/if}-->
-                        <!-- ▲<!--{$HeaderInternalNaviItem.bloc_name}--> -->
-                    <!--{/foreach}-->
-                    <!--{* ▲上ナビ *}-->
-                <!--{/if}-->
-                <!--{* ▲HeaderInternal COLUMN *}-->
-                </div>
                 <div id="header_navi" class="collapse navbar-collapse">
                     <div class="navbar-form navbar-left hidden-xs hidden-sm hidden-md">
                         <form role="search" name="search_form" id="header_search_form" method="get" action="<!--{$smarty.const.ROOT_URLPATH}-->
@@ -131,6 +114,23 @@
                         <li class="visible-xs"><a href="<!--{$smarty.const.ROOT_URLPATH}-->order/<!--{$smarty.const.DIR_INDEX_PATH}-->">特定商取引法に基づく表示</a></li>
                         <li class="visible-xs"><a href="<!--{$smarty.const.ROOT_URLPATH}-->guide/privacy.php">プライバシーポリシー</a></li>
                     </ul>
+                </div>
+                <div id="headerInternalColumn">
+                <!--{* ▼HeaderInternal COLUMN *}-->
+                <!--{if $arrPageLayout.HeaderInternalNavi|@count > 0}-->
+                    <!--{* ▼上ナビ *}-->
+                    <!--{foreach key=HeaderInternalNaviKey item=HeaderInternalNaviItem from=$arrPageLayout.HeaderInternalNavi}-->
+                        <!-- ▼<!--{$HeaderInternalNaviItem.bloc_name}--> -->
+                        <!--{if $HeaderInternalNaviItem.php_path != ""}-->
+                            <!--{include_php file=$HeaderInternalNaviItem.php_path items=$HeaderInternalNaviItem}-->
+                        <!--{else}-->
+                            <!--{include file=$HeaderInternalNaviItem.tpl_path items=$HeaderInternalNaviItem}-->
+                        <!--{/if}-->
+                        <!-- ▲<!--{$HeaderInternalNaviItem.bloc_name}--> -->
+                    <!--{/foreach}-->
+                    <!--{* ▲上ナビ *}-->
+                <!--{/if}-->
+                <!--{* ▲HeaderInternal COLUMN *}-->
                 </div>
             </div>
         </div>
