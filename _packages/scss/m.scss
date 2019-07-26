@@ -2,6 +2,8 @@
 
 /************************************************
  m.scss ---- import scss
+ example compiling for node-sass,
+ node-sass m.scss ../css/m.css --output-style compressed --source-map true --source-map-contents
 ************************************************ */
 @import "../scss/pager.scss";
 @import "../scss/bs3_helper.scss";
