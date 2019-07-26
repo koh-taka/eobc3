@@ -1,0 +1,146 @@
+//colors
+$color_fuzzy_wuzzy_brown_approx: #d44950;
+$color_corn_approx: #ecbd00;
+$color_gallery_approx: #eee;
+$color_colonial_white_approx: #feb;
+
+
+#container {
+	min-height: 700px;
+}
+.col-wrap {
+	padding-left: 0;
+	padding-right: 0;
+}
+#main_column {
+	padding-bottom: 40px;
+}
+#leftcolumn {
+	padding-bottom: 40px;
+}
+#rightcolumn {
+	padding-bottom: 40px;
+}
+h1 {
+	font-size: 150%;
+}
+h2 {
+	font-size: 150%;
+	&.title {
+		margin-top: 0;
+		margin-bottom: 30px;
+		padding: 5px 7px;
+		border-left: 5px solid $color_gallery_approx;
+	}
+}
+h3 {
+	font-size: 125%;
+}
+h4 {
+	font-size: 100%;
+}
+h5 {
+	font-size: 100%;
+}
+.sale_price {
+	color: $color_fuzzy_wuzzy_brown_approx;
+}
+.normal_price {
+	font-size: 90%;
+}
+.point {
+	color: $color_fuzzy_wuzzy_brown_approx;
+	font-weight: bold;
+}
+.user_name {
+	font-weight: bold;
+}
+.recommend_level {
+	color: $color_corn_approx;
+}
+.attention {
+	color: $color_fuzzy_wuzzy_brown_approx;
+}
+.st {
+	font-weight: bold;
+}
+.mini {
+	font-size: 90%;
+}
+.price {
+	color: $color_fuzzy_wuzzy_brown_approx;
+}
+input {
+	font-size: 16px !important;
+}
+select {
+	font-size: 16px !important;
+}
+textarea {
+	font-size: 16px !important;
+}
+label {
+	&.col-xs-1 {
+		width: 1%;
+	}
+	&.col-sm-1 {
+		width: 1%;
+	}
+	&.col-md-1 {
+		width: 1%;
+	}
+}
+#errorHeader {
+	color: $color_fuzzy_wuzzy_brown_approx;
+	font-weight: bold;
+	font-size: 12px;
+	background-color: $color_colonial_white_approx;
+	text-align: center;
+	padding: 5px;
+}
+#mobile-nav {
+	.cart-total-quantity {
+		position: absolute;
+		top: 2%;
+		left: 55%;
+	}
+	.nav > li > a {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+#footer_wrap {
+}
+#footer {
+}
+#pagetop {
+}
+#copyright {
+}
+.btn_area {
+	margin-top: 40px;
+}
+div {
+	&#complete_area {
+		margin-bottom: 20px;
+		.message {
+			margin-bottom: 20px;
+		}
+	}
+	&#undercolumn_entry .message {
+		margin-bottom: 20px;
+	}
+}
+.fa-rotate-45 {
+	filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.707,M12=0.707,M21=-0.707,M22=0.707,Dx=-2,Dy=8);
+	//vendor-prefix found
+	//-webkit-transform: rotate(-45deg)
+	//vendor-prefix found
+	//-moz-transform: rotate(-45deg)
+	//vendor-prefix found
+	//-ms-transform: rotate(-45deg)
+	//vendor-prefix found
+	//-o-transform: rotate(-45deg)
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(-45deg);
+}

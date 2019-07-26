@@ -1,0 +1,111 @@
+//colors
+$color_fuzzy_wuzzy_brown_approx: #d44950;
+$color_gallery_approx: #eee;
+
+/************************************************
+ ブロック用
+************************************************ */
+/*** 目次 ***
+
+▼ブロック共通
+リスト
+タイトル
+ヘッダー上、フッター下のブロックエリア
+
+▼各機能ブロックの指定
+-新着情報
+-現在のカートの中
+-カテゴリ
+-ガイドリンク
+-ログイン（サイド用）
+-検索
+-カレンダー
+-おすすめ商品
+    * 商品詳細のオススメ商品   [whobought_area]
+*/
+/* ==============================================
+ブロック共通
+    * #container から指定することで、ヘッダー・フッターには適用していない。
+/* ============================================= */
+
+.side_column {
+	overflow-x: hidden;
+}
+
+/* ===============================================
+▼カテゴリ
+=============================================== */
+#category_area {
+	li {
+		> a {
+			padding: 5px 10px;
+		}
+		&.level2 > a {
+			padding-left: 15px;
+		}
+		&.level3 > a {
+			padding-left: 20px;
+		}
+		&.level4 > a {
+			padding-left: 25px;
+		}
+		&.level5 > a {
+			padding-left: 30px;
+		}
+	}
+	.nav-pills > li > a > .badge {
+		margin-bottom: 3px;
+	}
+}
+/* ===============================================
+▼カレンダー
+=============================================== */
+#calender_area {
+	table {
+		td {
+			padding: 1px 3px;
+			text-align: center;
+		}
+		.month {
+		}
+	}
+	th {
+		padding: 1px 3px;
+		text-align: center;
+	}
+	.off {
+		color: $color_fuzzy_wuzzy_brown_approx;
+	}
+	.today {
+		background-color: $color_gallery_approx;
+		font-weight: bold;
+	}
+	.information {
+	}
+}
+/* ===============================================
+▼おすすめ商品
+=============================================== */
+#recommend_area {
+	.recommend-title {
+		display: block;
+		height: 30px;
+		overflow: hidden;
+	}
+	.recommend-price {
+		display: block;
+		height: 40px;
+		overflow: hidden;
+	}
+	.recommend-comment {
+		display: block;
+		height: 40px;
+		overflow: hidden;
+	}
+	.thumbnail {
+		height: 400px;
+	}
+	a:link:hover {
+		text-decoration: none;
+	}
+}

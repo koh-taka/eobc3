@@ -1,0 +1,57 @@
+//colors
+$color_gallery_approx: #eee;
+$color_tan_hide_approx: #ffa85c;
+$white: #fff;
+/************************************************
+ ポップアップウィンドウ
+************************************************ */
+div {
+	&#window_area {
+		.message {
+		}
+		table {
+        }
+        /* お客様の声の書き込み、新しいお届け先の追加・変更 */
+		#forgot {
+			.mailaddres {
+			}
+			p {
+			}
+		}
+		p.information {
+		}
+    }
+    /* 郵便番号検索 */
+	&#zipsearchcolumn {
+		margin: 15px auto 0 auto;
+		border-top: 5px solid $color_tan_hide_approx;
+		border-bottom: 5px solid $color_tan_hide_approx;
+		width: 460px;
+		background-color: $white;
+		h2 {
+			margin: 0 0 15px 0;
+			width: 460px;
+		}
+		.btn {
+			margin: 15px 0 30px;
+			text-align: center;
+		}
+	}
+	&#zipsearch_area {
+		margin: 15px auto 0 auto;
+		width: 460px;
+		#completebox p {
+			padding: 60px 5px;
+			text-align: center;
+		}
+	}
+	&#windowcolumn h2 {
+		padding: 10px 15px;
+		border-left: 5px solid $color_gallery_approx;
+    }
+    /* 商品詳細拡大写真、カート拡大写真 */
+	&#bigimage img {
+	}
+	&#cartimage img {
+	}
+}

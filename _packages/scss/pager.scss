@@ -1,0 +1,146 @@
+//colors
+$color_boston_blue_approx: #428bca;
+$white: #fff;
+$color_alto_approx: #ddd;
+$color_st_tropaz_approx: #2a6496;
+$color_gallery_approx: #eee;
+$color_mountain_mist_approx: #999;
+
+//@extend-elements
+//original selectors
+//.pagination >strong, .pagination >a
+%extend_1 {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -1px;
+	line-height: 1.428571429;
+	color: $color_boston_blue_approx;
+	text-decoration: none;
+	background-color: $white;
+	border: 1px solid $color_alto_approx;
+}
+
+//original selectors
+//.pagination >a:hover, .pagination >a:focus
+%extend_2 {
+	color: $color_st_tropaz_approx;
+	background-color: $color_gallery_approx;
+	border-color: $color_alto_approx;
+}
+
+//original selectors
+//.pager li >a, .pager li >span
+%extend_3 {
+	display: inline-block;
+	padding: 5px 14px;
+	background-color: $white;
+	border: 1px solid $color_alto_approx;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 15px;
+}
+
+//original selectors
+//.pager .disabled >a, .pager .disabled >a:hover, .pager .disabled >a:focus, .pager .disabled >span
+%extend_4 {
+	color: $color_mountain_mist_approx;
+	cursor: not-allowed;
+	background-color: $white;
+}
+
+
+.pagination {
+	display: inline-block;
+	padding-left: 0;
+	margin: 20px 0;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 4px;
+	> li {
+		display: inline;
+	}
+	> strong {
+		@extend %extend_1;
+		z-index: 2;
+		color: $white;
+		cursor: default;
+		background-color: $color_boston_blue_approx;
+		border-color: $color_boston_blue_approx;
+	}
+	> a {
+		@extend %extend_1;
+		&:hover {
+			@extend %extend_2;
+		}
+		&:focus {
+			@extend %extend_2;
+		}
+	}
+	> {
+		:first-child {
+			margin-left: 0;
+			//Instead of the line below you could use @include border-top-left-radius($radius)
+			border-top-left-radius: 4px;
+			//Instead of the line below you could use @include border-bottom-left-radius($radius)
+			border-bottom-left-radius: 4px;
+		}
+		:last-child {
+			//Instead of the line below you could use @include border-top-right-radius($radius)
+			border-top-right-radius: 4px;
+			//Instead of the line below you could use @include border-bottom-right-radius($radius)
+			border-bottom-right-radius: 4px;
+		}
+	}
+}
+.pager {
+	padding-left: 0;
+	margin: 20px 0;
+	text-align: center;
+	list-style: none;
+	li {
+		display: inline;
+		> a {
+			@extend %extend_3;
+			&:hover {
+				text-decoration: none;
+				background-color: $color_gallery_approx;
+			}
+			&:focus {
+				text-decoration: none;
+				background-color: $color_gallery_approx;
+			}
+		}
+		> span {
+			@extend %extend_3;
+		}
+	}
+	.next {
+		> a {
+			float: right;
+		}
+		> span {
+			float: right;
+		}
+	}
+	.previous {
+		> a {
+			float: left;
+		}
+		> span {
+			float: left;
+		}
+	}
+	.disabled {
+		> a {
+			@extend %extend_4;
+			&:hover {
+				@extend %extend_4;
+			}
+			&:focus {
+				@extend %extend_4;
+			}
+		}
+		> span {
+			@extend %extend_4;
+		}
+	}
+}

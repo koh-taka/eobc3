@@ -1,0 +1,387 @@
+//colors
+$white: #fff;
+$color_alto_approx: #ddd;
+$color_wild_sand_approx: #f5f5f5;
+$color_tapa_approx: #777;
+$color_mine_shaft_approx: #333;
+
+/************************************************
+ 各ページコンテンツ用
+************************************************ */
+/* ==============================================
+▼TOP
+=============================================== */
+/* メインイメージ
+----------------------------------------------- */
+#main_image {
+	margin-bottom: 10px;
+	text-align: center;
+}
+/* ==============================================
+▼MYページ
+=============================================== */
+/* 共通設定
+----------------------------------------------- */
+div#mypagecolumn {
+    width: 100%;
+}
+
+div {
+	&.list_area {
+		> a {
+			&:hover {
+				text-decoration: none;
+			}
+			&:focus {
+				text-decoration: none;
+			}
+		}
+		.status_icon {
+			margin-bottom: 5px;
+			font-size: 12px;
+		}
+		h3 {
+			margin-top: 0;
+			margin-bottom: 5px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+	}
+	&.sub_area {
+		padding: 35px 0 0;
+		h3 {
+			margin: 0;
+			padding: 0;
+		}
+	}
+	&#customervoice_area {
+		padding: 35px 0 0;
+		h2 {
+			margin: 0;
+			padding: 0;
+		}
+	}
+	&#whobought_area {
+		clear: both;
+		padding: 35px 0 0;
+		h2 {
+			margin: 0;
+			padding: 0;
+		}
+	}
+	&#undercolumn_shopping {
+		.deliv-heading {
+			padding: 10px 15px;
+			display: block;
+			background-color: $color_wild_sand_approx;
+		}
+		.radio td {
+			border: none;
+			vertical-align: middle;
+		}
+	}
+	&#undercolumn_error .message_area .error {
+		padding: 20% 10%;
+	}
+}
+
+.form-signin {
+	.form-signin-heading {
+		margin-bottom: 10px;
+	}
+	.checkbox {
+		margin-bottom: 10px;
+		font-weight: normal;
+	}
+	.form-control {
+		position: relative;
+		height: auto;
+		//vendor-prefix found
+		//-webkit-box-sizing: border-box
+		//vendor-prefix found
+		//-moz-box-sizing: border-box
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+		padding: 10px;
+		font-size: 16px;
+		&:focus {
+			z-index: 2;
+		}
+	}
+	input[type="email"] {
+		margin-bottom: -1px;
+		//Instead of the line below you could use @include border-bottom-right-radius($radius)
+		border-bottom-right-radius: 0;
+		//Instead of the line below you could use @include border-bottom-left-radius($radius)
+		border-bottom-left-radius: 0;
+	}
+	input[type="password"] {
+		margin-bottom: 10px;
+		//Instead of the line below you could use @include border-top-left-radius($radius)
+		border-top-left-radius: 0;
+		//Instead of the line below you could use @include border-top-right-radius($radius)
+		border-top-right-radius: 0;
+	}
+}
+.pagenumber_area {
+	margin-bottom: 20px;
+}
+#product-list-wrap {
+	.soldout {
+		position: absolute;
+		top: 25px;
+		left: 0;
+		z-index: 100;
+	}
+	div.list_area > a.thumbnail {
+		position: relative;
+	}
+}
+@media(max-width: 767px) {
+	#product-list-wrap {
+		.soldout {
+			top: 28px;
+			left: 2px;
+			font-size: 12px;
+		}
+		div.list_area {
+			position: relative;
+			display: block;
+			min-height: 150px;
+			margin-bottom: -1px;
+			padding: 0;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 0;
+			background-color: $white;
+			border: 1px solid $color_alto_approx;
+			.picture {
+				margin-top: 7px;
+			}
+			&:first-child {
+				//Instead of the line below you could use @include border-top-left-radius($radius)
+				border-top-left-radius: 4px;
+				//Instead of the line below you could use @include border-top-right-radius($radius)
+				border-top-right-radius: 4px;
+			}
+			&:last-child {
+				margin-bottom: 0;
+				//Instead of the line below you could use @include border-bottom-right-radius($radius)
+				border-bottom-right-radius: 4px;
+				//Instead of the line below you could use @include border-bottom-left-radius($radius)
+				border-bottom-left-radius: 4px;
+			}
+			&:hover {
+				text-decoration: none;
+				background-color: $color_wild_sand_approx;
+			}
+			&:focus {
+				text-decoration: none;
+				background-color: $color_wild_sand_approx;
+			}
+			a.thumbnail {
+				margin: 0;
+				padding: 7px 14px 7px 0;
+				background-color: transparent;
+				border: none;
+			}
+		}
+	}
+	.btn.xs-btn-lg {
+		padding: 10px 16px;
+	}
+	#undercolumn_cart .delete-cart {
+		position: absolute;
+		top: 10px;
+		right: -5px;
+	}
+}
+@media(min-width:768px) {
+	#product-list-wrap {
+		div {
+			&.list_area {
+				padding-left: 4px;
+				padding-right: 4px;
+				&:nth-child(3n) {
+					padding-left: 8px;
+					padding-right: 0;
+				}
+				&:nth-child(3n + 1) {
+					padding-left: 0;
+					padding-right: 8px;
+				}
+				> a.thumbnail {
+					padding: 0;
+					height: 275px;
+					overflow: hidden;
+					width: 148px;
+				}
+			}
+			&.caption {
+				height: 115px;
+				overflow: hidden;
+				> div.listcomment {
+					display: none;
+				}
+			}
+		}
+		.picture {
+			padding: 9px;
+		}
+	}
+	.dropdown-menu {
+		font-size: 16px;
+	}
+	.btn.sm-btn-lg {
+		padding: 10px 16px;
+	}
+	#detailphotobloc .picture {
+		padding: 9px;
+	}
+}
+@media(min-width: 992px) {
+	.btn {
+		&.xs-btn-lg {
+			padding: 6px 12px;
+		}
+		&.sm-btn-lg {
+			padding: 6px 12px;
+		}
+	}
+	.dropdown-menu {
+		font-size: 14px;
+	}
+	#product-list-wrap div {
+		&.list_area {
+			padding-left: 7px;
+			padding-right: 7px;
+			&:nth-child(3n) {
+				padding-left: 7px;
+				padding-right: 7px;
+			}
+			&:nth-child(4n) {
+				padding-left: 7px;
+				padding-right: 0;
+			}
+			&:nth-child(3n + 1) {
+				padding-left: 7px;
+				padding-right: 7px;
+			}
+			&:nth-child(4n + 1) {
+				padding-left: 0;
+				padding-right: 7px;
+			}
+			> a.thumbnail {
+				height: 315px;
+				width: 160px;
+			}
+		}
+		&.caption {
+			height: 125px;
+			> div.listcomment {
+				display: inline-block;
+			}
+		}
+	}
+}
+@media(min-width: 1200px) {
+	#product-list-wrap div.list_area {
+		padding-left: 10px;
+		padding-right: 10px;
+		&:nth-child(3n) {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		&:nth-child(4n) {
+			padding-left: 10px;
+			padding-right: 0;
+		}
+		&:nth-child(3n + 1) {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		&:nth-child(4n + 1) {
+			padding-left: 0;
+			padding-right: 10px;
+		}
+		> a.thumbnail {
+			height: 330px;
+			width: 200px;
+		}
+	}
+}
+html {
+	overflow-x: hidden;
+}
+body {
+	overflow-x: hidden;
+}
+@media screen and(max-width: 767px) {
+	.row-offcanvas {
+		position: relative;
+		//vendor-prefix found
+		//-webkit-transition: all .25s ease-out
+		//vendor-prefix found
+		//-moz-transition: all .25s ease-out
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: all .25s ease-out;
+	}
+	.row-offcanvas-right {
+		right: 0;
+		.sidebar-offcanvas {
+			right: -80%;
+		}
+		&.active {
+			right: 80%;
+			margin-right: 0;
+		}
+	}
+	.row-offcanvas-left {
+		left: 0;
+		.sidebar-offcanvas {
+			left: -80%;
+		}
+		&.active {
+			left: 80%;
+			margin-left: 0;
+		}
+	}
+	.sidebar-offcanvas {
+		position: absolute;
+		top: 0;
+		width: 80%;
+	}
+}
+#undercolumn_cart {
+	#quantity_level {
+		display: inline-block;
+	}
+	.item-title {
+		display: block;
+		margin-top: 5px;
+	}
+	.delete-cart {
+	}
+}
+.btn-delete {
+	color: $color_tapa_approx;
+	&:visited {
+		color: $color_tapa_approx;
+	}
+	&:hover {
+		color: $color_mine_shaft_approx;
+	}
+}
+#detailrightbloc .product_code {
+	dt {
+		display: inline;
+	}
+	dd {
+		display: inline;
+	}
+}
+p.condition_area {
+	margin: 0 auto;
+	padding: 5px;
+	border: solid 1px $color_mine_shaft_approx;
+	width: 566px;
+}
