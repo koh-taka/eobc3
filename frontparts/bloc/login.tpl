@@ -55,12 +55,12 @@
                         <div class="font-size-sm">
                             <a href="<!--{$smarty.const.HTTPS_URL}-->forgot/<!--{$smarty.const.DIR_INDEX_PATH}-->" onclick="eccube.openWindow('<!--{$smarty.const.HTTPS_URL}-->forgot/<!--{$smarty.const.DIR_INDEX_PATH}-->','forget','600','400',{scrollbars:'no',resizable:'no'}); return false;" target="_blank">
                                 <span class="fa fa-question-circle"></span>
-                                パスワードを忘れた方
+                                パスワードがわからない方
                             </a>
                         </div>
                         <div class="mini margin-bottom-lg">
                             <input type="checkbox" name="login_memory" id="login_memory" value="1" <!--{$tpl_login_memory|sfGetChecked:1}--> />
-                            <label for="login_memory"><span>&nbsp;コンピューターに記憶する</span></label>
+                            <label for="login_memory"><span>&nbsp;入力欄を記憶する</span></label>
                         </div>
                         <button class="btn btn-block btn-primary">ログイン</button>
                     <!--{/if}-->

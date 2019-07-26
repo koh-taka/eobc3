@@ -31,7 +31,7 @@
                     <!--{if $tpl_login}-->
                         <span class="user_name"><!--{$tpl_name|h}--> 様</span>の、現在の所持ポイントは「<span class="point"><!--{$tpl_user_point|number_format|default:0|h}--> pt</span>」です。<br />
                     <!--{else}-->
-                        ポイント制度をご利用になられる場合は、会員登録後ログインしてくださいますようお願い致します。<br />
+                        ポイントをご利用になる場合は、会員登録後に、ログインしてください。<br />
                     <!--{/if}-->
                     ポイントは商品購入時に<span class="price">1pt＝<!--{$smarty.const.POINT_VALUE|h}-->円</span>として使用することができます。
                 </div>
@@ -44,7 +44,7 @@
                 <div class="alert alert-danger">
                     <span class="fa fa-warning"></span>
                     <!--{foreach from=$cartKeys item=key name=cartKey}--><!--{$arrProductType[$key]|h}--><!--{if !$smarty.foreach.cartKey.last}-->、<!--{/if}--><!--{/foreach}-->は同時購入できません。
-                    お手数ですが、個別に購入手続きをお願い致します。
+                    お手数ですが、個別に購入手続きをお願いします。
                 </div>
             <!--{/if}-->
 

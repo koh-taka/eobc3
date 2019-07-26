@@ -26,12 +26,7 @@
         <div id="complete_area">
             <p class="message alert alert-info margin-bottom-xl">お問い合わせ内容の送信が完了いたしました。</p>
             <div class="col-sm-12 margin-bottom-lg">
-                <p>
-                    万一、ご回答メールが届かない場合は、トラブルの可能性もありますので大変お手数ではございますがもう一度お問い合わせいただくか、お電話にてお問い合わせください。
-                </p>
-                <p>
-                    今後ともご愛顧賜りますよう、よろしくお願い申し上げます。
-                </p>
+                <p>確認メールが届かない場合は、<a href="<!--{$smarty.const.HTTPS_URL}-->contact/<!--{$smarty.const.DIR_INDEX_PATH}-->">こちらからお問い合わせください。</a></p>
                 <address class="shop_information">
                     <strong class="font-size-lg"><!--{$arrSiteInfo.company_name|h}--></strong><br />
                     TEL：<!--{$arrSiteInfo.tel01}-->-<!--{$arrSiteInfo.tel02}-->-<!--{$arrSiteInfo.tel03}-->

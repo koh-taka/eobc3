@@ -25,11 +25,11 @@
     <h2>パスワードの再発行 秘密の質問の確認</h2>
     <p class="information">
         ご登録時に入力した下記質問の答えを入力して「次へ」ボタンをクリックしてください。<br />
-        ※下記質問の答えをお忘れになられた場合は、<a href="mailto:<!--{$arrSiteInfo.email02|escape:'hex'}-->"><!--{$arrSiteInfo.email02|escape:'hexentitiy'}--></a>までご連絡ください。<br />
+        ※下記質問の答えがわからない場合は、<a href="mailto:<!--{$arrSiteInfo.email02|escape:'hex'}-->"><!--{$arrSiteInfo.email02|escape:'hexentitiy'}--></a>までご連絡ください。<br />
     </p>
     <p class="message alert alert-danger">
         <span class="fa fa-warning"></span>
-        【重要】新しくパスワードを発行いたしますので、お忘れになったパスワードはご利用できなくなります。</p>
+        【重要】新しくパスワードを発行いたしますので、以前のパスワードはご利用できなくなります。</p>
     </p>
     <form action="?" method="post" name="form1">
         <input type="hidden" name="<!--{$smarty.const.TRANSACTION_ID_NAME}-->" value="<!--{$transactionid}-->" />

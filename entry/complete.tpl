@@ -28,10 +28,10 @@
             現在<span class="attention">仮会員</span>の状態です。</p>
             <div class="col-sm-12 margin-bottom-lg">
                 <p>
-                    ご入力いただいたメールアドレス宛てに、ご連絡が届いておりますので、本会員登録になった上でお買い物をお楽しみください。
+                    ご入力いただいたメールアドレス宛に、ご連絡が届いておりますので、ご確認ください。
                 </p>
                 <p>
-                    今後ともご愛顧賜りますよう、よろしくお願い申し上げます。
+                    本会員になった上でお買い物をお楽しみください。よろしくお願いいたします。
                 </p>
                 <address class="shop_information">
                     <strong class="font-size-lg"><!--{$arrSiteInfo.company_name|h}--></strong><br />

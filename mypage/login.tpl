@@ -43,25 +43,25 @@
                         <input type="password" class="box300 form-control" name="<!--{$key2}-->" maxlength="<!--{$arrForm[$key2].length}-->" style="<!--{$arrErr[$key2]|sfGetErrorColor}-->" required="" placeholder="パスワード" />
                         <span class="attention"><!--{$arrErr[$key1]}--><!--{$arrErr[$key2]}--></span>
                         <small>
-                            <a href="<!--{$smarty.const.HTTPS_URL}-->forgot/<!--{$smarty.const.DIR_INDEX_PATH}-->" onclick="eccube.openWindow('<!--{$smarty.const.HTTPS_URL}-->forgot/<!--{$smarty.const.DIR_INDEX_PATH}-->','forget','600','460',{scrollbars:'no',resizable:'no'}); return false;" target="_blank"><span class="fa fa-question-circle"></span>パスワードを忘れた方はこちら</a>
+                            <a href="<!--{$smarty.const.HTTPS_URL}-->forgot/<!--{$smarty.const.DIR_INDEX_PATH}-->" onclick="eccube.openWindow('<!--{$smarty.const.HTTPS_URL}-->forgot/<!--{$smarty.const.DIR_INDEX_PATH}-->','forget','600','460',{scrollbars:'no',resizable:'no'}); return false;" target="_blank"><span class="fa fa-question-circle"></span>パスワードがわからない方はこちら</a>
                         </small>
 
                         <!--{assign var=key value="login_memory"}-->
                         <label class="checkbox margin-left-lg">
-                          <input type="checkbox" name="<!--{$key}-->" value="1"<!--{$tpl_login_memory|sfGetChecked:1}--> id="login_memory" /> メールアドレスをコンピューターに記憶させる
+                          <input type="checkbox" name="<!--{$key}-->" value="1"<!--{$tpl_login_memory|sfGetChecked:1}--> id="login_memory" /> メールアドレスを記憶させる
                         </label>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">ログイン</button>
                     </div>
                     <div class="alert alert-warning margin-bottom-xl">
                         <p>
-                            ※メールアドレスを忘れた方は、お手数ですが、<a href="<!--{$smarty.const.ROOT_URLPATH}-->contact/<!--{$smarty.const.DIR_INDEX_PATH}-->">お問い合わせページ</a>からお問い合わせください。
+                            ※メールアドレスがわからない場合は、<a href="<!--{$smarty.const.ROOT_URLPATH}-->contact/<!--{$smarty.const.DIR_INDEX_PATH}-->">お問い合わせページ</a>からお問い合わせください。
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h3><span class="fa fa-arrow-circle-right"></span> アカウントの作成</h3>
                     <div class="inputtext margin-bottom-xl">
-                        <p>会員登録をすると便利なMyページをご利用いただけます。</p>
+                        <p>会員登録をすると便利なMYページをご利用いただけます。</p>
                         <p>また、ログインするだけで、毎回お名前や住所などを入力することなくスムーズにお買い物をお楽しみいただけます。</p>
                     </div>
                     <div class="jumbotron padding-md">

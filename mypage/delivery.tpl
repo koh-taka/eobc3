@@ -27,7 +27,7 @@
     <!--{include file=$tpl_navi}-->
     <div id="mycontents_area">
         <h3><!--{$tpl_subtitle|h}--></h3>
-        <p class="inforamtion">登録住所以外への住所へ送付される場合等にご利用いただくことができます。<br />
+        <p class="inforamtion">登録住所以外への住所へ送付したい場合等にご利用ください。<br />
         ※最大<span class="attention"><!--{$smarty.const.DELIV_ADDR_MAX|h}-->件</span>まで登録できます。</p>
 
         <!--{if $tpl_linemax < $smarty.const.DELIV_ADDR_MAX}-->

@@ -25,7 +25,7 @@
 
     <div id="undercolumn_contact">
 
-        <div class="alert alert-warning">内容によっては回答をさしあげるのにお時間をいただくこともございます。<br />
+        <div class="alert alert-warning">内容によってはご連絡にお時間をいただくことがございます。<br />
         また、休業日は翌営業日以降の対応となりますのでご了承ください。</div>
         <div class="alert alert-info fade in">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -182,7 +182,7 @@
                 <div class="col-sm-9<!--{if $arrErr.contents}--> has-error<!--{/if}-->">
                             <textarea name="contents" id="contents" class="box380 form-control" rows="10" style="<!--{$arrErr.contents|h|sfGetErrorColor}-->; ime-mode: active;" placeholder="お問い合せ内容（全角<!--{$smarty.const.MLTEXT_LEN}-->字以下）"><!--{"\n"}--><!--{$arrForm.contents.value|h}--></textarea>
                             <span class="attention"><!--{$arrErr.contents}--></span>
-                            <p class="mini attention help-block">※ご注文に関するお問い合わせには、必ず「ご注文番号」をご記入くださいますようお願いいたします。</p>
+                            <p class="mini attention help-block">※ご注文に関するお問い合わせには、メールやMYページに記載された「ご注文番号」を、必ずご記入ください。</p>
                 </div>
             </div>
             <div class="btn_area form-group">

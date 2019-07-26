@@ -43,10 +43,9 @@
         <!-- ▲コンビに決済の場合には表示 -->
 
         <div id="complete_area">
-            <p class="message"><!--{$arrInfo.shop_name|h}-->の商品をご購入いただき、ありがとうございました。</p>
-            <p>ただいま、ご注文の確認メールをお送りさせていただきました。</p>
-            <p>万一、ご確認メールが届かない場合は、トラブルの可能性もありますので大変お手数ではございますがもう一度お問い合わせいただくか、お電話にてお問い合わせくださいませ。</p>
-            <p>今後ともご愛顧賜りますようよろしくお願い申し上げます。</p>
+            <p class="message"><!--{$arrInfo.shop_name|h}-->から商品をご購入いただき、誠にありがとうございました。</p>
+            <p>ただいま、ご注文の確認メールをお送りいたしました。</p>
+            <p>確認メールが届かない場合は、<a href="<!--{$smarty.const.HTTPS_URL}-->contact/<!--{$smarty.const.DIR_INDEX_PATH}-->">こちらからお問い合わせください。</a></p>
 
             <div class="shop_information">
                 <p class="name"><strong class="font-size-lg"><!--{$arrInfo.shop_name|h}--></strong></p>

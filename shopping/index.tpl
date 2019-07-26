@@ -45,12 +45,12 @@
                         </small>
                         <!--{assign var=key value="login_memory"}-->
                         <label class="checkbox margin-left-lg">
-                          <input type="checkbox" name="<!--{$key}-->" value="1"<!--{$tpl_login_memory|sfGetChecked:1}--> id="login_memory" /> メールアドレスをコンピューターに記憶させる
+                          <input type="checkbox" name="<!--{$key}-->" value="1"<!--{$tpl_login_memory|sfGetChecked:1}--> id="login_memory" /> メールアドレスを記憶させる
                         </label>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">ログイン</button>
                     </div>
                     <div class="alert alert-warning margin-bottom-xl">
-                        <p>※メールアドレスを忘れた方は、お手数ですが、<a href="<!--{$smarty.const.ROOT_URLPATH}-->contact/<!--{$smarty.const.DIR_INDEX_PATH}-->">お問い合わせページ</a>からお問い合わせください。</p>
+                        <p>※メールアドレスがわからない方は、<a href="<!--{$smarty.const.ROOT_URLPATH}-->contact/<!--{$smarty.const.DIR_INDEX_PATH}-->">こちらからお問い合わせください。</a></p>
                     </div>
                 </form>
             </div>

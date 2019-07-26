@@ -24,8 +24,8 @@
 <div id="window_area">
     <h2 class="title">商品レビューの投稿</h2>
     <div id="completebox" class="panel-body">
-        <p class="message alert alert-info">登録が完了しました。ご利用ありがとうございました。</p>
-        <p>弊社にて登録内容を確認後、ホームページに反映させていただきます。<br />
+        <p class="message alert alert-info">投稿が完了しました。ご利用ありがとうございました。</p>
+        <p>投稿いただいた内容を確認後、ホームページに反映させていただきます。<br />
             今しばらくお待ちくださいませ。</p>
     </div>
     <div class="btn_area">
