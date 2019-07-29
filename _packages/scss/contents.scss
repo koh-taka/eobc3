@@ -17,6 +17,16 @@ $color_mine_shaft_approx: #333;
 	margin-bottom: 10px;
 	text-align: center;
 }
+/* スライドショー */
+.carousel .carousel-control {
+    width: 5%;
+    text-shadow: 0 4px 5px rgba(0,0,0,.8);
+    color: rgba(255, 255, 255, 0.6);
+}
+/* スライドショー */
+.carousel .carousel-control:hover {
+    color: white;
+}
 /* ==============================================
 ▼MYページ
 =============================================== */

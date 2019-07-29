@@ -21,9 +21,22 @@
  *}-->
 
 <!--{strip}-->
-    <div id="main_image">
-        <a href="<!--{$smarty.const.P_DETAIL_URLPATH}-->1">
-            <img class="hover_change_image img-responsive" src="<!--{$TPL_URLPATH}-->img/banner/bnr_top_main.jpg" alt="詳細はこちら"  width="100%" />
+<div id="main_image" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#main_image" data-slide-to="0" class="active"></li>
+        <li data-target="#main_image" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+        <a href="<!--{$smarty.const.P_DETAIL_URLPATH}-->1" class="item active"><img class="hover_change_image img-responsive"
+                src="<!--{$TPL_URLPATH}-->img/banner/bnr_test.jpg" alt="詳細はこちら" width="100%" /></a>
+        <a href="<!--{$smarty.const.P_DETAIL_URLPATH}-->1" class="item"><img class="hover_change_image img-responsive"
+                src="<!--{$TPL_URLPATH}-->img/banner/bnr_top_main.jpg" alt="詳細はこちら" width="100%" /></a>
+        <a class="left carousel-control" href="#main_image" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a class="right carousel-control" href="#main_image" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         </a>
     </div>
+</div>
 <!--{/strip}-->
