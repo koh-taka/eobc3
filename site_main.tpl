@@ -41,23 +41,23 @@
             <!--{* ▲HEADER *}-->
 
             <div id="container" class="container">
-                    <!--{* ▼TOP COLUMN*}-->
-                    <!--{if $arrPageLayout.TopNavi|@count > 0}-->
-                        <div id="topcolumn">
-                            <!--{* ▼上ナビ *}-->
-                            <!--{foreach key=TopNaviKey item=TopNaviItem from=$arrPageLayout.TopNavi}-->
-                                <!-- ▼<!--{$TopNaviItem.bloc_name}--> -->
-                                <!--{if $TopNaviItem.php_path != ""}-->
-                                    <!--{include_php file=$TopNaviItem.php_path items=$TopNaviItem}-->
-                                <!--{else}-->
-                                    <!--{include file=$TopNaviItem.tpl_path items=$TopNaviItem}-->
-                                <!--{/if}-->
-                                <!-- ▲<!--{$TopNaviItem.bloc_name}--> -->
-                            <!--{/foreach}-->
-                            <!--{* ▲上ナビ *}-->
-                        </div>
-                    <!--{/if}-->
-                    <!--{* ▲TOP COLUMN*}-->
+                <!--{* ▼TOP COLUMN*}-->
+                <!--{if $arrPageLayout.TopNavi|@count > 0}-->
+                    <div id="topcolumn">
+                        <!--{* ▼上ナビ *}-->
+                        <!--{foreach key=TopNaviKey item=TopNaviItem from=$arrPageLayout.TopNavi}-->
+                            <!-- ▼<!--{$TopNaviItem.bloc_name}--> -->
+                            <!--{if $TopNaviItem.php_path != ""}-->
+                                <!--{include_php file=$TopNaviItem.php_path items=$TopNaviItem}-->
+                            <!--{else}-->
+                                <!--{include file=$TopNaviItem.tpl_path items=$TopNaviItem}-->
+                            <!--{/if}-->
+                            <!-- ▲<!--{$TopNaviItem.bloc_name}--> -->
+                        <!--{/foreach}-->
+                        <!--{* ▲上ナビ *}-->
+                    </div>
+                <!--{/if}-->
+                <!--{* ▲TOP COLUMN*}-->
 
                 <div class="row row-offcanvas row-offcanvas-left">
                     <!--{* ▼CENTER COLUMN *}-->
@@ -169,57 +169,31 @@
                     <!--{* ▲RIGHT COLUMN *}-->
                 </div><!--offcanvas-->
 
-                    <!--{* ▼BOTTOM COLUMN*}-->
-                    <!--{if $arrPageLayout.BottomNavi|@count > 0}-->
-                        <div id="bottomcolumn">
-                            <!--{* ▼下ナビ *}-->
-                            <!--{foreach key=BottomNaviKey item=BottomNaviItem from=$arrPageLayout.BottomNavi}-->
-                                <!-- ▼<!--{$BottomNaviItem.bloc_name}--> -->
-                                <!--{if $BottomNaviItem.php_path != ""}-->
-                                    <!--{include_php file=$BottomNaviItem.php_path items=$BottomNaviItem}-->
-                                <!--{else}-->
-                                    <!--{include file=$BottomNaviItem.tpl_path items=$BottomNaviItem}-->
-                                <!--{/if}-->
-                                <!-- ▲<!--{$BottomNaviItem.bloc_name}--> -->
-                            <!--{/foreach}-->
-                            <!--{* ▲下ナビ *}-->
-                        </div>
-                    <!--{/if}-->
-                    <!--{* ▲BOTTOM COLUMN*}-->
+                <!--{* ▼BOTTOM COLUMN*}-->
+                <!--{if $arrPageLayout.BottomNavi|@count > 0}-->
+                    <div id="bottomcolumn">
+                        <!--{* ▼下ナビ *}-->
+                        <!--{foreach key=BottomNaviKey item=BottomNaviItem from=$arrPageLayout.BottomNavi}-->
+                            <!-- ▼<!--{$BottomNaviItem.bloc_name}--> -->
+                            <!--{if $BottomNaviItem.php_path != ""}-->
+                                <!--{include_php file=$BottomNaviItem.php_path items=$BottomNaviItem}-->
+                            <!--{else}-->
+                                <!--{include file=$BottomNaviItem.tpl_path items=$BottomNaviItem}-->
+                            <!--{/if}-->
+                            <!-- ▲<!--{$BottomNaviItem.bloc_name}--> -->
+                        <!--{/foreach}-->
+                        <!--{* ▲下ナビ *}-->
+                    </div>
+                <!--{/if}-->
+                <!--{* ▲BOTTOM COLUMN*}-->
             </div><!--container-->
-
             <!--{* ▼FOOTER *}-->
             <!--{if $arrPageLayout.footer_chk != 2}-->
                 <!--{include file=$footer_tpl}-->
             <!--{/if}-->
             <!--{* ▲FOOTER *}-->
-            <!--{* ▼FooterBottom COLUMN*}-->
-            <!--{if $arrPageLayout.FooterBottomNavi|@count > 0}-->
-                <div id="footerbottomcolumn">
-                    <!--{* ▼上ナビ *}-->
-                    <!--{foreach key=FooterBottomNaviKey item=FooterBottomNaviItem from=$arrPageLayout.FooterBottomNavi}-->
-                        <!-- ▼<!--{$FooterBottomNaviItem.bloc_name}--> -->
-                        <!--{if $FooterBottomNaviItem.php_path != ""}-->
-                            <!--{include_php file=$FooterBottomNaviItem.php_path items=$FooterBottomNaviItem}-->
-                        <!--{else}-->
-                            <!--{include file=$FooterBottomNaviItem.tpl_path items=$FooterBottomNaviItem}-->
-                        <!--{/if}-->
-                        <!-- ▲<!--{$FooterBottomNaviItem.bloc_name}--> -->
-                    <!--{/foreach}-->
-                    <!--{* ▲上ナビ *}-->
-                </div>
-            <!--{/if}-->
-            <!--{* ▲FooterBottom COLUMN*}-->
         </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-honoka@3.3.7-a/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-colorbox@1.6.4/jquery.colorbox-min.js"></script>
-<!--{if $tpl_page_class_name === "LC_Page_Abouts"}-->
-    <!--{if ($smarty.server.HTTPS != "") && ($smarty.server.HTTPS != "off")}-->
-        <script type="text/javascript" src="https://maps-api-ssl.google.com/maps/api/js?sensor=false"></script>
-    <!--{else}-->
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <!--{/if}-->
-<!--{/if}-->
+
     </body>
 <!--{/strip}-->

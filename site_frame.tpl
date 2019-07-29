@@ -82,4 +82,14 @@
 <!--{include file='./site_main.tpl'}-->
 <!-- ▲BODY部 エンド -->
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-honoka@3.3.7-a/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-colorbox@1.6.4/jquery.colorbox-min.js"></script>
+<!--{if $tpl_page_class_name === "LC_Page_Abouts"}-->
+    <!--{if ($smarty.server.HTTPS != "") && ($smarty.server.HTTPS != "off")}-->
+        <script type="text/javascript" src="https://maps-api-ssl.google.com/maps/api/js?sensor=false"></script>
+    <!--{else}-->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <!--{/if}-->
+<!--{/if}-->
+
 </html>

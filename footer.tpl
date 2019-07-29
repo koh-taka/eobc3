@@ -18,5 +18,23 @@
             </div>
         </div>
     </div>
+    <!--{* ▼FooterBottom COLUMN*}-->
+    <!--{if $arrPageLayout.FooterBottomNavi|@count > 0}-->
+        <div id="footerbottomcolumn">
+            <!--{* ▼上ナビ *}-->
+            <!--{foreach key=FooterBottomNaviKey item=FooterBottomNaviItem from=$arrPageLayout.FooterBottomNavi}-->
+                <!-- ▼<!--{$FooterBottomNaviItem.bloc_name}--> -->
+                <!--{if $FooterBottomNaviItem.php_path != ""}-->
+                    <!--{include_php file=$FooterBottomNaviItem.php_path items=$FooterBottomNaviItem}-->
+                <!--{else}-->
+                    <!--{include file=$FooterBottomNaviItem.tpl_path items=$FooterBottomNaviItem}-->
+                <!--{/if}-->
+                <!-- ▲<!--{$FooterBottomNaviItem.bloc_name}--> -->
+            <!--{/foreach}-->
+            <!--{* ▲上ナビ *}-->
+        </div>
+    <!--{/if}-->
+    <!--{* ▲FooterBottom COLUMN*}-->
+
 <!--{/strip}-->
 <!--▲FOOTER-->
