@@ -21,5 +21,7 @@
  *}-->
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-honoka@3.3.7-a/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-colorbox@1.6.4/jquery.colorbox-min.js"></script>
 </body>
 </html>

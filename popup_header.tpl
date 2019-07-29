@@ -28,27 +28,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="<!--{$TPL_URLPATH}-->bootstrap/3.1.0/css/bootstrap.min.css" />
-<link rel="stylesheet" href="<!--{$TPL_URLPATH}-->css/import.css" type="text/css" media="all" />
-<link rel="stylesheet" href="<!--{$smarty.const.ROOT_URLPATH}-->js/jquery.colorbox/colorbox.css" type="text/css" media="all" />
-<script type="text/javascript" src="<!--{$TPL_URLPATH}-->js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.js"></script>
-<!-- #2342 次期メジャーバージョン(2.14)にてeccube.legacy.jsは削除予定.モジュール、プラグインの互換性を考慮して2.13では残します. -->
-<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.legacy.js"></script>
-<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/jquery.colorbox/jquery.colorbox-min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-honoka@3.3.7-a/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="<!--{$TPL_URLPATH}-->css/m.css" type="text/css" media="all" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-colorbox@1.6.4/example4/colorbox.css" type="text/css" media="all" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+
+
+
 <title><!--{$arrSiteInfo.shop_name}-->/<!--{$subtitle|h}--></title>
 <link rel="shortcut icon" href="<!--{$TPL_URLPATH}-->img/common/favicon.ico" />
 <link rel="icon" type="image/vnd.microsoft.icon" href="<!--{$TPL_URLPATH}-->img/common/favicon.ico" />
-<script src="<!--{$TPL_URLPATH}-->bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script src="<!--{$TPL_URLPATH}-->js/jquery.plugin.js"></script>
+
+</head>
+
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.js"></script>
+<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.legacy.js"></script>
+
+<script src="<!--{$TPL_URLPATH}-->js/jquery.plugin.min.js"></script>
 <script type="text/javascript">//<![CDATA[
     <!--{$tpl_javascript}-->
     $(function(){
         <!--{$tpl_onload}-->
     });
 //]]></script>
-</head>
 
 <body>
 <noscript>
