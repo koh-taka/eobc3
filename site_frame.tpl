@@ -31,18 +31,22 @@
     <meta name="robots" content="<!--{$arrPageLayout.meta_robots|h}-->" />
 <!--{/if}-->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="<!--{$smarty.const.HTTP_URL}-->">
+
+<!--{if ($smarty.server.HTTPS != "") && ($smarty.server.HTTPS != "off")}-->
+    <meta property="og:url" content="<!--{$smarty.const.HTTPS_URL}-->">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="<!--{$smarty.const.HTTPS_URL}-->rss/<!--{$smarty.const.DIR_INDEX_PATH}-->" />
+<!--{else}-->
+    <meta property="og:url" content="<!--{$smarty.const.HTTP_URL}-->">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="<!--{$smarty.const.HTTP_URL}-->rss/<!--{$smarty.const.DIR_INDEX_PATH}-->" />
+<!--{/if}-->
 
 <link rel="shortcut icon" href="<!--{$TPL_URLPATH}-->img/common/favicon.ico" />
 <link rel="icon" type="image/vnd.microsoft.icon" href="<!--{$TPL_URLPATH}-->img/common/favicon.ico" />
-<link rel="alternate" type="application/rss+xml" title="RSS" href="<!--{$smarty.const.HTTP_URL}-->rss/<!--{$smarty.const.DIR_INDEX_PATH}-->" />
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-honoka@3.3.7-a/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="<!--{$TPL_URLPATH}-->css/m.css" type="text/css" media="all" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-colorbox@1.6.4/example4/colorbox.css" type="text/css" media="all" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-
-
 
 <!--{strip}-->
     <!--{* ▼Head COLUMN*}-->
