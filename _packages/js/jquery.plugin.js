@@ -1,2 +1,43 @@
 /*jQuery input clear button*/
-(function ($) {"use strict";$.fn.inputClear = function(options) {var settings = $.extend({'exclude':'.no-clear',},options);return this.each(function() {$(this).not(settings.exclude).unbind("clear-focus").bind("clear-focus", (function () {if ($(this).data("clear-button")) return;var x = $("<a class='clear-text' style='cursor:pointer;color:#aaa;padding:3px 10px;'><span class='fa fa-times-circle fa-2x'></span></a>");$(x).data("text-box", this);$(x).mouseover(function () { $(this).addClass("over"); }).mouseleave(function () { $(this).removeClass("over"); });$(this).data("clear-button", x);$(x).css({ "position": "absolute", "left": ($(this).position().right), "top": $(this).position().top, "margin": "0px 0px 0px -40px" });$(this).after(x);})).unbind("clear-blur").bind("clear-blur", (function (e){var x = $(this).data("clear-button");if (x) {if ($(x).hasClass("over")) {$(x).removeClass("over");$(x).hide().remove();$(this).val("");$(this).removeData("clear-button");var txt = this;e.stopPropagation();e.stopImmediatePropagation();setTimeout($.proxy(function () { $(this).trigger("focus"); }, txt), 50);$(this).focus();return false;}}if (x && !$(x).hasClass("over")) {$(this).removeData("clear-button");$(x).remove();}}));$(this).on("focus", function () {$(this).trigger("clear-focus");}).on("blur", function () {$(this).trigger("clear-blur");});});};})(jQuery);
+$(function(){
+    $(document).on('click', '.toggle-offcanvas', function(){
+        $('.row-offcanvas').toggleClass('active');
+        return false;
+    });
+
+    $("#main_column, #rightcolumn").on("touchstart", TouchStart);
+    $("#main_column, #rightcolumn").on("touchmove" , TouchMove);
+
+    function Position(e){
+        var x = e.originalEvent.touches[0].pageX;
+        var y = e.originalEvent.touches[0].pageY;
+        x = Math.floor(x);
+        y = Math.floor(y);
+        var pos = {'x':x , 'y':y};
+        return pos;
+    }
+    function TouchStart( event ) {
+        var pos = Position(event);
+        $("#main_column").data("memory",pos.x);
+    }
+    function TouchMove( event ) {
+        var pos = Position(event);
+        var start = $("#main_column").data("memory");
+        var range = start - pos.x;
+        if( range > 50){
+            $('.row-offcanvas').removeClass('active'); // 左に移動
+        } else if (start < 30 && range < -10){
+            $('.row-offcanvas').addClass('active'); // 右に移動
+        }
+    }
+
+    var pageTop = function(){
+        $((navigator.userAgent.indexOf("Opera") != -1) ? document.compatMode == 'BackCompat' ? 'body' : 'html' :'html,body').animate({scrollTop:0}, 'slow');
+        return false;
+    };
+    var pageBottom = function(){
+        $((navigator.userAgent.indexOf("Opera") != -1) ? document.compatMode == 'BackCompat' ? 'body' : 'html' :'html,body').animate({scrollTop: $(document).height()-$(window).height()}, 'slow');
+        return false;
+    };
+    $("a[href^=#top]").click(pageTop);
+});

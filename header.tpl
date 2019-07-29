@@ -146,7 +146,7 @@
                     </span>
                     <input type="hidden" name="<!--{$smarty.const.TRANSACTION_ID_NAME}-->" value="<!--{$transactionid}-->" />
                     <input type="hidden" name="mode" value="search" />
-                    <input type="text" class="form-control input-clear" name="name" value="<!--{$smarty.get.name|h}-->" placeholder="キーワードを入力" />
+                    <input type="text" class="form-control" name="name" value="<!--{$smarty.get.name|h}-->" placeholder="キーワードを入力" />
                 </div>
             </form>
         </div>
