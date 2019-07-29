@@ -9,13 +9,14 @@
  *}-->
 
 <html lang="ja">
-<head>
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# fb: http://ogp.me/ns/fb#">
     <meta charset="<!--{$smarty.const.CHAR_CODE}-->" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=<!--{$smarty.const.CHAR_CODE}-->" />
 <title><!--{$arrSiteInfo.shop_name|h}--><!--{if $tpl_subtitle|strlen >= 1}--> / <!--{$tpl_subtitle|h}--><!--{elseif $tpl_title|strlen >= 1}--> / <!--{$tpl_title|h}--><!--{/if}--></title>
+<meta property="og:title" content="<!--{$arrSiteInfo.shop_name|h}--><!--{if $tpl_subtitle|strlen >= 1}--> / <!--{$tpl_subtitle|h}--><!--{elseif $tpl_title|strlen >= 1}--> / <!--{$tpl_title|h}--><!--{/if}-->">
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <!--{if $arrPageLayout.author|strlen >= 1}-->
@@ -23,13 +24,15 @@
 <!--{/if}-->
 <!--{if $arrPageLayout.description|strlen >= 1}-->
     <meta name="description" content="<!--{$arrPageLayout.description|h}-->" />
-<!--{/if}-->
-<!--{if $arrPageLayout.keyword|strlen >= 1}-->
-    <meta name="keywords" content="<!--{$arrPageLayout.keyword|h}-->" />
+    <meta property="og:description" content="<!--{$arrPageLayout.description|h}-->">
+    <meta name="twitter:card" content="<!--{$arrPageLayout.description|h}-->">
 <!--{/if}-->
 <!--{if $arrPageLayout.meta_robots|strlen >= 1}-->
     <meta name="robots" content="<!--{$arrPageLayout.meta_robots|h}-->" />
 <!--{/if}-->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="<!--{$smarty.const.HTTP_URL}-->">
+
 <link rel="shortcut icon" href="<!--{$TPL_URLPATH}-->img/common/favicon.ico" />
 <link rel="icon" type="image/vnd.microsoft.icon" href="<!--{$TPL_URLPATH}-->img/common/favicon.ico" />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="<!--{$smarty.const.HTTP_URL}-->rss/<!--{$smarty.const.DIR_INDEX_PATH}-->" />
