@@ -40,6 +40,10 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="<!--{$smarty.const.HTTP_URL}-->rss/<!--{$smarty.const.DIR_INDEX_PATH}-->" />
 <!--{/if}-->
 
+ <!--{if $arrPageLayout.filename === "products/detail"}-->
+    <meta property="og:image" content="http://<!--{$smarty.server.SERVER_NAME}--><!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_image|h}-->" />
+ <!--{/if}-->
+
 <link rel="shortcut icon" href="<!--{$TPL_URLPATH}-->img/common/favicon.ico" />
 <link rel="icon" type="image/vnd.microsoft.icon" href="<!--{$TPL_URLPATH}-->img/common/favicon.ico" />
 
@@ -85,7 +89,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<!-- ▼BODY部 スタート -->
+<!-- ▼BODY部 スタート --> 
 <!--{include file='./site_main.tpl'}-->
 <!-- ▲BODY部 エンド -->
 
