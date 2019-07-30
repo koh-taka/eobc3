@@ -32,12 +32,11 @@
 <!--{/if}-->
 <meta property="og:type" content="website" />
 
+<link rel="alternate" type="application/rss+xml" title="RSS" href="//<!--{$smarty.server.SERVER_NAME}-->/rss/<!--{$smarty.const.DIR_INDEX_PATH}-->" />
 <!--{if ($smarty.server.HTTPS != "") && ($smarty.server.HTTPS != "off")}-->
     <meta property="og:url" content="<!--{$smarty.const.HTTPS_URL}-->">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="<!--{$smarty.const.HTTPS_URL}-->rss/<!--{$smarty.const.DIR_INDEX_PATH}-->" />
 <!--{else}-->
     <meta property="og:url" content="<!--{$smarty.const.HTTP_URL}-->">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="<!--{$smarty.const.HTTP_URL}-->rss/<!--{$smarty.const.DIR_INDEX_PATH}-->" />
 <!--{/if}-->
 
  <!--{if $arrPageLayout.filename === "products/detail"}-->
