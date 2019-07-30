@@ -1,3 +1,9 @@
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+ErrorDocument 404 /products/detail.php?product_id=not_found_404
+order deny,allow
+
 <ifModule mod_expires.c>
 ExpiresActive On
 ExpiresDefault "access plus 10 seconds"
