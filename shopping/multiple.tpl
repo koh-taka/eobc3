@@ -46,12 +46,7 @@
                             <div class="col-xs-9">
                                 <div class="row">
                                     <div class="col-xs-4 col-md-3 padding-right-none">
-                                        <a
-                                            <!--{if $arrForm.main_image[$index]|strlen >= 1}--> href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrForm.main_image.value[$index]|sfNoImageMainList|h}-->" class="expansion" target="_blank"
-                                            <!--{/if}-->
-                                        >
                                             <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrForm.main_list_image.value[$index]|sfNoImageMainList|h}-->" class="img-responsive img-rounded" style="" alt="<!--{$arrForm.name.value[$index]|h}-->" />
-                                        </a>
                                     </div>
                                     <div class="col-xs-8">
                                         <!--{* 商品名 *}--><strong><!--{$arrForm.name.value[$index]|h}--></strong><br />

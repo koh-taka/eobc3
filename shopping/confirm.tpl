@@ -46,11 +46,7 @@
                 <!--{foreach from=$arrCartItems item=item}-->
                     <div class="list-group-item clearfix">
                         <div class="col-xs-3 col-sm-2 col-md-1 padding-none">
-                            <a
-                                <!--{if $item.productsClass.main_image|strlen >= 1}--> href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$item.productsClass.main_image|sfNoImageMainList|h}-->" class="expansion" target="_blank"
-                                <!--{/if}-->
-                            >
-                                <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$item.productsClass.main_list_image|sfNoImageMainList|h}-->" class="img-responsive" alt="<!--{$item.productsClass.name|h}-->" /></a>
+                            <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$item.productsClass.main_list_image|sfNoImageMainList|h}-->" class="img-responsive" alt="<!--{$item.productsClass.name|h}-->" />
                         </div>
                         <div class="col-xs-9 col-sm-10 col-md-11 padding-right-none">
                             <strong><!--{$item.productsClass.name|h}--></strong>

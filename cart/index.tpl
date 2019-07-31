@@ -89,7 +89,7 @@
 
                                     <div class="col-xs-3 col-sm-3 col-md-2 padding-left-none padding-right-none">
                                     <!--{if $item.productsClass.main_image|strlen >= 1}-->
-                                        <a class="expansion" target="_blank" href="<!--{$smarty.const.IMAGE_SAVE_URLPATH|h}--><!--{$item.productsClass.main_image|sfNoImageMainList|h}-->">
+                                        <a target="_blank" href="<!--{$smarty.const.P_DETAIL_URLPATH}--><!--{$item.productsClass.product_id|u}-->">
                                     <!--{/if}-->
                                             <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$item.productsClass.main_list_image|sfNoImageMainList|h}-->" class="img-responsive" alt="<!--{$item.productsClass.name|h}-->" />
                                             <!--{if $item.productsClass.main_image|strlen >= 1}-->
@@ -98,7 +98,7 @@
                                     </div>
                                     <div class="col-xs-9 col-sm-9 col-md-10"><!--{* 商品名 *}-->
                                         <strong class="cart-item-title">
-                                            <a href="<!--{$smarty.const.P_DETAIL_URLPATH}--><!--{$item.productsClass.product_id|u}-->"><!--{$item.productsClass.name|h}--></a>
+                                            <a target="_blank" href="<!--{$smarty.const.P_DETAIL_URLPATH}--><!--{$item.productsClass.product_id|u}-->"><!--{$item.productsClass.name|h}--></a>
                                         </strong>
                                         <!--{if $item.productsClass.classcategory_name1 != ""}-->
                                             <div><small><!--{$item.productsClass.class_name1|h}-->：<!--{$item.productsClass.classcategory_name1|h}--></small></div>
