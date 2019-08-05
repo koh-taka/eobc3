@@ -432,6 +432,11 @@ p.condition_area {
 	
 }
 
+#whobought_area .product_item img{
+	max-width: 65px;
+	max-height: 65px;
+}
+
 /* ▼（photoswipe.js導入によるもの） */
 #detailphotobloc .photo-sub {
     padding: 0 5px;
