@@ -30,11 +30,8 @@
                             <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_large_image|h}-->" width="470" height="470" alt="<!--{$arrProduct.name|h}-->" class="picture img-responsive img-thumbnail center-block" />
                         </a>
                         <!--{else}-->
-                        <a
-                                href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_image|h}-->"
-                                data-size="1200x1200"
-                            >
-                            <img src="<!--{$arrFile[$key].filepath|h}-->" width="470" height="470" alt="<!--{$arrProduct.name|h}-->" class="picture img-responsive img-thumbnail center-block" />
+                        <a href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_image|h}-->" data-size="1200x1200">
+                            <img src="<!--{$arrFile[$key].filepath|h}-->" width="470" height="470" alt="solo - <!--{$arrProduct.name|h}-->" class="picture img-responsive img-thumbnail center-block" />
                         </a>
                         <!--{/if}-->
                     </figure>
@@ -49,13 +46,15 @@
                                 <figure class="photo-sub col-xs-4">
                                     <!--{if $arrProduct[$lkey_img]|strlen >= 1}-->
                                         <a href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct[$lkey_img]|h}-->" data-size="1200x1200">
-                                    <!--{/if}-->
-                                    <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct[$lkey_img]|h}-->" alt="<!--{$arrProduct.name|h}-->" class="img-responsive" alt="<!--{$cnt_img}-->枚目"/>
-                                    <!--{if $arrProduct[$lkey_img]|strlen >= 1}-->
+                                            <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct[$lkey_img]|h}-->" alt="<!--{$arrProduct.name|h}-->" class="img-responsive img-thumbnail" alt="<!--{$cnt_img}-->枚目"/>
                                         </a>
-                                        <br />
+                                    <!--{else}-->
+                                        <a href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct[$ikey_img]|h}-->" data-size="1200x1200">
+                                            <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct[$ikey_img]|h}-->" alt="<!--{$arrProduct.name|h}-->" class="img-responsive img-thumbnail" alt="<!--{$cnt_img}-->枚目"/>
+                                        </a>
                                     <!--{/if}-->
                                 </figure>
+
                             <!--{/if}-->
                         <!--{/if}-->
                     <!--{/section}-->
