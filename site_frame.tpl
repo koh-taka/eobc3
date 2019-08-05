@@ -48,7 +48,6 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-honoka@3.3.7-a/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="<!--{$TPL_URLPATH}-->css/m.css" type="text/css" media="all" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-colorbox@1.6.4/example4/colorbox.css" type="text/css" media="all" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 
 <!--{strip}-->
@@ -81,6 +80,7 @@
     $(function(){
         <!--{$tpl_onload}-->
     });
+
 //]]></script>
 
 <!--[if lt IE 9]>
@@ -93,7 +93,9 @@
 <!-- ▲BODY部 エンド -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-honoka@3.3.7-a/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-colorbox@1.6.4/jquery.colorbox-min.js"></script>
+
+
+
 <!--{if $tpl_page_class_name === "LC_Page_Abouts"}-->
     <!--{if ($smarty.server.HTTPS != "") && ($smarty.server.HTTPS != "off")}-->
         <script type="text/javascript" src="https://maps-api-ssl.google.com/maps/api/js?sensor=false"></script>

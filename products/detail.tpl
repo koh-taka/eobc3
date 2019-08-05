@@ -8,7 +8,6 @@
  *}-->
 
 <script type="text/javascript">//<![CDATA[
-    // 規格2に選択肢を割り当てる。
     function fnSetClassCategories(form, classcat_id2_selected) {
         var $form = $(form);
         var product_id = $form.find('input[name=product_id]').val();
@@ -22,39 +21,50 @@
     <form name="form1" id="form1" class="form-horizontal" method="post" action="?">
         <input type="hidden" name="<!--{$smarty.const.TRANSACTION_ID_NAME}-->" value="<!--{$transactionid}-->" />
         <div id="detailarea" class="clearfix row">
-            <div id="detailphotobloc-wrap" class="col-md-5">
-                <div id="detailphotobloc" class="">
-                    <div class="photo margin-bottom-lg">
+            <div id="detailphotobloc-wrap" class="col-md-5 clearfix">
+                <div id="detailphotobloc" class="photo my-gallery">
+                    <figure class="photo-main margin-bottom-lg">
                         <!--{assign var=key value="main_image"}-->
-                        <!--★画像★-->
                         <!--{if $arrProduct.main_large_image|strlen >= 1}-->
-                            <a
-                                href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_large_image|h}-->"
-                                class="expansion"
-                                target="_blank"
-                            >
+                        <a href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_large_image|h}-->" data-size="1200x1200">
                             <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_large_image|h}-->" width="470" height="470" alt="<!--{$arrProduct.name|h}-->" class="picture img-responsive img-thumbnail center-block" />
-                            </a>
-                            <span class="mini">
-                                    <!--★拡大する★-->
-                                    <a
-                                        href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_large_image|h}-->"
-                                        class="expansion btn btn-link"
-                                        target="_blank"
-                                    >
-                                        <span class="fa fa-search-plus"></span>
-                                        画像を拡大する
-                                    </a>
-                            </span>
+                        </a>
                         <!--{else}-->
+                        <a
+                                href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_image|h}-->"
+                                data-size="1200x1200"
+                            >
                             <img src="<!--{$arrFile[$key].filepath|h}-->" width="470" height="470" alt="<!--{$arrProduct.name|h}-->" class="picture img-responsive img-thumbnail center-block" />
+                        </a>
                         <!--{/if}-->
-                    </div>
+                    </figure>
+
+                    <!--{*▼サブ画像 *}-->
+                    <!--{section name=cnt_img loop=$smarty.const.PRODUCTSUB_MAX}-->
+                        <!--{assign var=key_img value="sub_title`$smarty.section.cnt_img.index+1`"}-->
+                        <!--{assign var=ikey_img value="sub_image`$smarty.section.cnt_img.index+1`"}-->
+                        <!--{assign var=lkey_img value="sub_large_image`$smarty.section.cnt_img.index+1`"}-->
+                        <!--{if $arrProduct[$key_img] != "" or $arrProduct[$ikey_img]|strlen >= 1}-->
+                            <!--{if $arrProduct[$ikey_img]|strlen >= 1}-->
+                                <figure class="photo-sub col-sm-4 col-xs-6">
+                                    <!--{if $arrProduct[$lkey_img]|strlen >= 1}-->
+                                        <a href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct[$lkey_img]|h}-->" data-size="1200x1200">
+                                    <!--{/if}-->
+                                    <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct[$lkey_img]|h}-->" alt="<!--{$arrProduct.name|h}-->" class="img-responsive" alt="<!--{$cnt_img}-->枚目"/>
+                                    <!--{if $arrProduct[$lkey_img]|strlen >= 1}-->
+                                        </a>
+                                        <br />
+                                    <!--{/if}-->
+                                </figure>
+                            <!--{/if}-->
+                        <!--{/if}-->
+                    <!--{/section}-->
+                    <!--{*▲サブ画像 *}-->
                 </div>
             </div>
             <div id="detailrightbloc-wrap" class="col-md-7">
                 <div id="detailrightbloc" class="panel panel-default">
-                    <!--▼商品ステータス-->
+                    <!--{*▼商品ステータス *}-->
                     <!--{assign var=ps value=$productStatus[$tpl_product_id]}-->
                     <!--{if count($ps) > 0}-->
                     <div class="panel-heading">
@@ -78,12 +88,10 @@
                         </div>
                     </div>
                     <!--{/if}-->
-                    <!--▲商品ステータス-->
+                    <!--{*▲商品ステータス *}-->
                     <div id="detail-warp" class="panel-body">
-                        <!--★商品名★-->
                         <h2 class="margin-none"><!--{$arrProduct.name|h}--></h2>
 
-                        <!--★商品コード★-->
                         <dl class="product_code">
                             <dt>商品コード：</dt>
                             <dd>
@@ -97,7 +105,6 @@
                             </dd>
                         </dl>
 
-                        <!--★通常価格★-->
                         <!--{if $arrProduct.price01_min_inctax > 0}-->
                             <dl class="normal_price">
                                 <dt><!--{$smarty.const.NORMAL_PRICE_TITLE}-->：</dt>
@@ -114,7 +121,6 @@
                             </dl>
                         <!--{/if}-->
 
-                        <!--★販売価格★-->
                         <dl class="sale_price">
                             <dt><!--{$smarty.const.SALE_PRICE_TITLE}-->：</dt>
                             <dd class="price">
@@ -129,7 +135,6 @@
                             </dd>
                         </dl>
 
-                        <!--★ポイント★-->
                         <!--{if $smarty.const.USE_POINT !== false}-->
                             <div class="point">ポイント：
                                 <span id="point_default"><!--{strip}-->
@@ -156,16 +161,15 @@
                         <!--{/if}-->
                         <!--{* ▲メーカー *}-->
 
-                        <!--▼メーカーURL-->
+                        <!--{* ▼メーカーURL *}-->
                         <!--{if $arrProduct.comment1|strlen >= 1}-->
                             <dl class="comment1">
                                 <dt>メーカーURL：</dt>
                                 <dd><a href="<!--{$arrProduct.comment1|h}-->"><!--{$arrProduct.comment1|h}--></a></dd>
                             </dl>
                         <!--{/if}-->
-                        <!--▼メーカーURL-->
+                        <!--{* ▲メーカーURL *}-->
 
-                        <!--★関連カテゴリ★-->
                         <dl class="relative_cat">
                             <dt>関連カテゴリ：</dt>
                             <!--{section name=r loop=$arrRelativeCat}-->
@@ -178,11 +182,12 @@
                             <!--{/section}-->
                         </dl>
 
-                        <!--★詳細メインコメント★-->
+                        <!--{* ★詳細メインコメント★ *}-->
                         <div class="main_comment"><!--{$arrProduct.main_comment|nl2br_html}--></div>
                     </div>
 
                     <!--▼買い物かご-->
+                    <!--{* ▼買い物かご *}-->
                     <div id="cart_area-wrap" class="panel-footer">
                         <div class="cart_area clearfix">
                             <input type="hidden" name="mode" value="cart" />
@@ -238,7 +243,6 @@
                                     <div class="cartin col-xs-6 col-sm-7">
                                         <div class="cartin_btn">
                                             <div id="cartbtn_default">
-                                                <!--★カートに入れる★-->
                                                 <a href="javascript:void(document.form1.submit())" class="btn btn-danger btn-block">
                                                     <span class="glyphicon glyphicon-shopping-cart"></span> カートに追加
                                                 </a>
@@ -270,56 +274,31 @@
                     </div>
                 </div>
             </div>
-            <!--▲買い物かご-->
+            <!--{* ▲買い物かご *}-->
         </div>
     </form>
-
     <!--詳細ここまで-->
 
-    <!--▼サブコメント-->
+    <!--{* ▼サブコメント *}-->
     <!--{section name=cnt loop=$smarty.const.PRODUCTSUB_MAX}-->
         <!--{assign var=key value="sub_title`$smarty.section.cnt.index+1`"}-->
         <!--{assign var=ikey value="sub_image`$smarty.section.cnt.index+1`"}-->
-        <!--{if $arrProduct[$key] != "" or $arrProduct[$ikey]|strlen >= 1}-->
+        <!--{assign var=ckey value="sub_comment`$smarty.section.cnt.index+1`"}-->
+        
+        <!--{if $arrProduct[$key]|strlen >= 1 or $arrProduct[$ckey]|strlen >= 1}-->
             <div class="sub_area clearfix">
-                <div class="jumbotron padding-sm panel-heading margin-bottom-none">
-                    <h3><!--★サブタイトル★--><!--{$arrProduct[$key]|h}--></h3>
-                </div>
-                <div class="panel-body row">
-                <!--{assign var=ckey value="sub_comment`$smarty.section.cnt.index+1`"}-->
-                <!--▼サブ画像-->
-                <!--{assign var=lkey value="sub_large_image`$smarty.section.cnt.index+1`"}-->
-                <!--{if $arrProduct[$ikey]|strlen >= 1}-->
-                    <!--{if $arrProduct[$ckey]|strlen >= 1}-->
-                    <div class="subtext col-md-8"><!--★サブテキスト★--><!--{$arrProduct[$ckey]|nl2br_html}--></div>
-                    <!--{/if}-->
-                    <div class="subphotoimg text-center<!--{if $arrProduct[$ckey]|strlen >= 1}--> col-md-4<!--{else}--> col-xs-12 margin-top-lg<!--{/if}-->">
-                        <!--{if $arrProduct[$lkey]|strlen >= 1}-->
-                            <a href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct[$lkey]|h}-->" class="expansion" target="_blank" >
-                        <!--{/if}-->
-                        <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct[$lkey]|h}-->" alt="<!--{$arrProduct.name|h}-->" class="img-responsive" width="100%" />
-                        <!--{if $arrProduct[$lkey]|strlen >= 1}-->
-                            </a>
-                            <br />
-                            <span class="mini">
-                                <a href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct[$lkey]|h}-->" class="expansion btn btn-link" target="_blank">
-                                    <span class="fa fa-search-plus"></span>
-                                    画像を拡大する
-                                </a>
-                            </span>
-                        <!--{/if}-->
-                    </div>
-                <!--{else}-->
-                    <div class="subtext col-xs-12"><!--★サブテキスト★--><!--{$arrProduct[$ckey]|nl2br_html}--></div>
+                <!--{if $arrProduct[$key]|strlen >= 1}-->
+                <h3><!--★サブタイトル★--><!--{$arrProduct[$key]|h}--></h3>
                 <!--{/if}-->
-                <!--▲サブ画像-->
-                </div>
+                <!--{if $arrProduct[$ckey]|strlen >= 1}-->
+                <p class="subtext"><!--★サブテキスト★--><!--{$arrProduct[$ckey]|nl2br_html}--></p>
+                <!--{/if}-->
             </div>
         <!--{/if}-->
     <!--{/section}-->
-    <!--▲サブコメント-->
+    <!--{* ▲サブコメント *}-->
 
-    <!--この商品に対するお客様の声-->
+    <!--{* ▼お客様の声 *}-->
     <div id="customervoice_area">
         <div class="well-sm bg-warning panel-heading">
             <h2 class="text-warning"><span class="fa fa-comment fa-flip-horizontal"></span> 商品レビュー</h2>
@@ -329,7 +308,6 @@
             <p>この商品に対するご感想をぜひお寄せください。</p>
             <div class="review_btn">
                 <!--{if count($arrReview) < $smarty.const.REVIEW_REGIST_MAX}-->
-                    <!--★新規コメントを書き込む★-->
                     <a href="./review.php"
                         onclick="eccube.openWindow('./review.php?product_id=<!--{$arrProduct.product_id}-->','review','600','640'); return false;"
                         target="_blank" class="btn btn-default btn-sm">
@@ -355,9 +333,9 @@
             </ul>
         <!--{/if}-->
     </div>
-    <!--お客様の声ここまで-->
+    <!--{* ▲お客様の声 *}-->
 
-    <!--▼関連商品-->
+    <!--{* ▼関連商品 *}-->
     <!--{if $arrRecommend}-->
         <div id="whobought_area">
             <div class="well-sm bg-warning panel-heading margin-bottom-lg">
@@ -392,6 +370,6 @@
             </div>
         </div>
     <!--{/if}-->
-    <!--▲関連商品-->
+    <!--{* ▲関連商品 *}-->
 
 </div>
