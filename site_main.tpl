@@ -193,11 +193,13 @@
             <!--{/if}-->
             <!--{* ▲FOOTER *}-->
         </div>
+        
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js" integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js" integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-honoka@3.3.7-a/dist/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" async></script>
 
-<script type="text/javascript" src="<!--{$TPL_URLPATH}-->js/photoSwipeConf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js" integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js" integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="<!--{$TPL_URLPATH}-->js/photoSwipeConf.min.js"></script>
 
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -236,6 +238,14 @@
             </div>
         </div>
     </div>
+
+    <!--{if $tpl_page_class_name === "LC_Page_Abouts"}-->
+        <!--{if ($smarty.server.HTTPS != "") && ($smarty.server.HTTPS != "off")}-->
+            <script type="text/javascript" src="https://maps-api-ssl.google.com/maps/api/js?sensor=false" async></script>
+        <!--{else}-->
+            <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false" async></script>
+        <!--{/if}-->
+    <!--{/if}-->
 
     </body>
 <!--{/strip}-->

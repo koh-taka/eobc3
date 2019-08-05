@@ -46,7 +46,7 @@
 <link rel="shortcut icon" href="<!--{$TPL_URLPATH}-->img/common/favicon.ico" />
 <link rel="icon" type="image/vnd.microsoft.icon" href="<!--{$TPL_URLPATH}-->img/common/favicon.ico" />
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-honoka@3.3.7-a/dist/css/bootstrap.min.css" integrity="sha256-TjxkNWd4Voe/qogGjGjEbaxzWwoIiciIfmzuJgnS0wM=" crossorigin="anonymous" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-honoka@3.3.7-a/dist/css/bootstrap.min.css" integrity="sha256-TjxkNWd4Voe/qogGjGjEbaxzWwoIiciIfmzuJgnS0wM=" crossorigin="anonymous" media="all">
 <link rel="stylesheet" href="<!--{$TPL_URLPATH}-->css/m.css" type="text/css" media="all" media="print" onload="this.media='all'" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css" integrity="sha256-LWdHSKWG7zv3DTpee8YAgoTfkj3gNkfauF624h4P2Nw=" crossorigin="anonymous" media="print" onload="this.media='all'">
@@ -93,15 +93,5 @@
 <!-- ▼BODY部 スタート --> 
 <!--{include file='./site_main.tpl'}-->
 <!-- ▲BODY部 エンド -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-honoka@3.3.7-a/dist/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
-
-<!--{if $tpl_page_class_name === "LC_Page_Abouts"}-->
-    <!--{if ($smarty.server.HTTPS != "") && ($smarty.server.HTTPS != "off")}-->
-        <script type="text/javascript" src="https://maps-api-ssl.google.com/maps/api/js?sensor=false"></script>
-    <!--{else}-->
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <!--{/if}-->
-<!--{/if}-->
 
 </html>
