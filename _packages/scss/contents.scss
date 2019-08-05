@@ -403,6 +403,35 @@ p.condition_area {
 }
 
 /* ▼商品詳細 */
+
+#detail-warp{
+	.price{
+		margin-top: 1em;
+		margin-bottom: 1em;
+		border-top: solid 1px #eee;
+		border-bottom: solid 1px #eee;
+	}
+	.normal_price {
+		color: #999;
+	}
+	.cart_area {
+		margin-bottom: 2em;
+	}
+	#price01_default {
+		text-decoration: line-through #bbb;
+	}
+	#price02_default {
+		font-size: 200%;
+		font-weight: bold;
+	}
+
+	.sale_price .yen {
+		font-size: large;
+		margin-right: 0.5em;
+	}
+	
+}
+
 /* ▼（photoswipe.js導入によるもの） */
 #detailphotobloc .photo-sub {
     padding: 0 5px;

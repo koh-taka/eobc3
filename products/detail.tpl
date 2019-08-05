@@ -46,7 +46,7 @@
                         <!--{assign var=lkey_img value="sub_large_image`$smarty.section.cnt_img.index+1`"}-->
                         <!--{if $arrProduct[$key_img] != "" or $arrProduct[$ikey_img]|strlen >= 1}-->
                             <!--{if $arrProduct[$ikey_img]|strlen >= 1}-->
-                                <figure class="photo-sub col-sm-4 col-xs-6">
+                                <figure class="photo-sub col-xs-4">
                                     <!--{if $arrProduct[$lkey_img]|strlen >= 1}-->
                                         <a href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct[$lkey_img]|h}-->" data-size="1200x1200">
                                     <!--{/if}-->
@@ -89,26 +89,13 @@
                     </div>
                     <!--{/if}-->
                     <!--{*▲商品ステータス *}-->
+
+                    <!--{* ▼買い物かご *}-->
                     <div id="detail-warp" class="panel-body">
                         <h2 class="margin-none"><!--{$arrProduct.name|h}--></h2>
-
-                        <dl class="product_code">
-                            <dt>商品コード：</dt>
-                            <dd>
-                                <span id="product_code_default">
-                                    <!--{if $arrProduct.product_code_min == $arrProduct.product_code_max}-->
-                                        <!--{$arrProduct.product_code_min|h}-->
-                                    <!--{else}-->
-                                        <!--{$arrProduct.product_code_min|h}-->～<!--{$arrProduct.product_code_max|h}-->
-                                    <!--{/if}-->
-                                </span><span id="product_code_dynamic"></span>
-                            </dd>
-                        </dl>
-
-                        <!--{if $arrProduct.price01_min_inctax > 0}-->
-                            <dl class="normal_price">
-                                <dt><!--{$smarty.const.NORMAL_PRICE_TITLE}-->：</dt>
-                                <dd class="price">
+                        <div class="price">
+                            <!--{if $arrProduct.price01_min_inctax > 0}-->
+                                <div class="normal_price"><!--{$smarty.const.NORMAL_PRICE_TITLE}-->：
                                     <span id="price01_default"><!--{strip}-->
                                         <!--{if $arrProduct.price01_min_inctax == $arrProduct.price01_max_inctax}-->
                                             <!--{$arrProduct.price01_min_inctax|number_format}-->
@@ -117,13 +104,10 @@
                                         <!--{/if}-->
                                     <!--{/strip}--></span><span id="price01_dynamic"></span>
                                     <span class="yen">円</span><span class="inctax">(税込)</span>
-                                </dd>
-                            </dl>
-                        <!--{/if}-->
+                                </div>
+                            <!--{/if}-->
 
-                        <dl class="sale_price">
-                            <dt><!--{$smarty.const.SALE_PRICE_TITLE}-->：</dt>
-                            <dd class="price">
+                            <div class="sale_price">
                                 <span id="price02_default"><!--{strip}-->
                                     <!--{if $arrProduct.price02_min_inctax == $arrProduct.price02_max_inctax}-->
                                         <!--{$arrProduct.price02_min_inctax|number_format}-->
@@ -132,8 +116,8 @@
                                     <!--{/if}-->
                                 <!--{/strip}--></span><span id="price02_dynamic"></span>
                                 <span class="yen">円</span><span class="inctax">(税込)</span>
-                            </dd>
-                        </dl>
+                            </div>
+                        </div>
 
                         <!--{if $smarty.const.USE_POINT !== false}-->
                             <div class="point">ポイント：
@@ -152,43 +136,6 @@
                             </div>
                         <!--{/if}-->
 
-                        <!--{* ▼メーカー *}-->
-                        <!--{if $arrProduct.maker_name|strlen >= 1}-->
-                            <dl class="maker">
-                                <dt>メーカー：</dt>
-                                <dd><!--{$arrProduct.maker_name|h}--></dd>
-                            </dl>
-                        <!--{/if}-->
-                        <!--{* ▲メーカー *}-->
-
-                        <!--{* ▼メーカーURL *}-->
-                        <!--{if $arrProduct.comment1|strlen >= 1}-->
-                            <dl class="comment1">
-                                <dt>メーカーURL：</dt>
-                                <dd><a href="<!--{$arrProduct.comment1|h}-->"><!--{$arrProduct.comment1|h}--></a></dd>
-                            </dl>
-                        <!--{/if}-->
-                        <!--{* ▲メーカーURL *}-->
-
-                        <dl class="relative_cat">
-                            <dt>関連カテゴリ：</dt>
-                            <!--{section name=r loop=$arrRelativeCat}-->
-                                <dd>
-                                    <!--{section name=s loop=$arrRelativeCat[r]}-->
-                                        <a href="<!--{$smarty.const.ROOT_URLPATH}-->products/list.php?category_id=<!--{$arrRelativeCat[r][s].category_id}-->"><!--{$arrRelativeCat[r][s].category_name|h}--></a>
-                                        <!--{if !$smarty.section.s.last}--><!--{$smarty.const.SEPA_CATNAVI}--><!--{/if}-->
-                                    <!--{/section}-->
-                                </dd>
-                            <!--{/section}-->
-                        </dl>
-
-                        <!--{* ★詳細メインコメント★ *}-->
-                        <div class="main_comment"><!--{$arrProduct.main_comment|nl2br_html}--></div>
-                    </div>
-
-                    <!--▼買い物かご-->
-                    <!--{* ▼買い物かご *}-->
-                    <div id="cart_area-wrap" class="panel-footer">
                         <div class="cart_area clearfix">
                             <input type="hidden" name="mode" value="cart" />
                             <input type="hidden" name="product_id" value="<!--{$tpl_product_id}-->" />
@@ -271,10 +218,57 @@
                                 </div>
                             <!--{/if}-->
                         </div>
+
+                        <!--{* ▼メーカー *}-->
+                        <!--{if $arrProduct.maker_name|strlen >= 1}-->
+                            <dl class="maker">
+                                <dt>メーカー：</dt>
+                                <dd><!--{$arrProduct.maker_name|h}--></dd>
+                            </dl>
+                        <!--{/if}-->
+                        <!--{* ▲メーカー *}-->
+
+                        <!--{* ▼メーカーURL *}-->
+                        <!--{if $arrProduct.comment1|strlen >= 1}-->
+                            <dl class="comment1">
+                                <dt>メーカーURL：</dt>
+                                <dd><a href="<!--{$arrProduct.comment1|h}-->"><!--{$arrProduct.comment1|h}--></a></dd>
+                            </dl>
+                        <!--{/if}-->
+                        <!--{* ▲メーカーURL *}-->
+
+                        <dl class="relative_cat">
+                            <dt>関連カテゴリ：</dt>
+                            <!--{section name=r loop=$arrRelativeCat}-->
+                                <dd>
+                                    <!--{section name=s loop=$arrRelativeCat[r]}-->
+                                        <a href="<!--{$smarty.const.ROOT_URLPATH}-->products/list.php?category_id=<!--{$arrRelativeCat[r][s].category_id}-->"><!--{$arrRelativeCat[r][s].category_name|h}--></a>
+                                        <!--{if !$smarty.section.s.last}--><!--{$smarty.const.SEPA_CATNAVI}--><!--{/if}-->
+                                    <!--{/section}-->
+                                </dd>
+                            <!--{/section}-->
+                        </dl>
+
+                        <dl class="product_code">
+                            <dt>商品コード：</dt>
+                            <dd>
+                                <span id="product_code_default">
+                                    <!--{if $arrProduct.product_code_min == $arrProduct.product_code_max}-->
+                                        <!--{$arrProduct.product_code_min|h}-->
+                                    <!--{else}-->
+                                        <!--{$arrProduct.product_code_min|h}-->～<!--{$arrProduct.product_code_max|h}-->
+                                    <!--{/if}-->
+                                </span><span id="product_code_dynamic"></span>
+                            </dd>
+                        </dl>
+
+                        <!--{* ★詳細メインコメント★ *}-->
+                        <div class="main_comment"><!--{$arrProduct.main_comment|nl2br_html}--></div>
                     </div>
+                    <!--{* ▲買い物かご *}-->
+
                 </div>
             </div>
-            <!--{* ▲買い物かご *}-->
         </div>
     </form>
     <!--詳細ここまで-->
