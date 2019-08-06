@@ -58,14 +58,14 @@ div {
 		}
 	}
 	&.sub_area {
-		padding: 35px 0 0;
+		padding: 1em;
 		h3 {
 			margin: 0;
 			padding: 0;
 		}
 	}
 	&#customervoice_area {
-		padding: 35px 0 0;
+		padding: 1em;
 		h2 {
 			margin: 0;
 			padding: 0;
@@ -147,6 +147,23 @@ div {
 		position: relative;
 	}
 }
+
+
+#detail-warp .main_comment img, .sub_area img{
+	width:100%;
+	max-width: 100%;
+	height: auto;
+}
+
+#underphotobloc{
+	clear:both;
+	padding: 0.5em;
+	margin-top: 1em;
+	div{
+		padding: 0.5em;
+	}
+}
+
 @media(max-width: 767px) {
 	#product-list-wrap {
 		.soldout {

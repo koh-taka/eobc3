@@ -21,7 +21,7 @@
     <form name="form1" id="form1" class="form-horizontal" method="post" action="?">
         <input type="hidden" name="<!--{$smarty.const.TRANSACTION_ID_NAME}-->" value="<!--{$transactionid}-->" />
         <div id="detailarea" class="clearfix row">
-            <div id="detailphotobloc-wrap" class="col-md-5 clearfix">
+            <div id="detailphotobloc-wrap" class="col-md-5 col-xs-12">
                 <div id="detailphotobloc" class="photo my-gallery">
                     <figure class="photo-main margin-bottom-lg">
                         <!--{assign var=key value="main_image"}-->
@@ -61,7 +61,7 @@
                     <!--{*▲サブ画像 *}-->
                 </div>
             </div>
-            <div id="detailrightbloc-wrap" class="col-md-7">
+            <div id="detailrightbloc-wrap" class="col-md-7 col-xs-12">
                 <div id="detailrightbloc" class="panel panel-default">
                     <!--{*▼商品ステータス *}-->
                     <!--{assign var=ps value=$productStatus[$tpl_product_id]}-->
@@ -218,49 +218,6 @@
                             <!--{/if}-->
                         </div>
 
-                        <!--{* ▼メーカー *}-->
-                        <!--{if $arrProduct.maker_name|strlen >= 1}-->
-                            <dl class="maker">
-                                <dt>メーカー：</dt>
-                                <dd><!--{$arrProduct.maker_name|h}--></dd>
-                            </dl>
-                        <!--{/if}-->
-                        <!--{* ▲メーカー *}-->
-
-                        <!--{* ▼メーカーURL *}-->
-                        <!--{if $arrProduct.comment1|strlen >= 1}-->
-                            <dl class="comment1">
-                                <dt>メーカーURL：</dt>
-                                <dd><a href="<!--{$arrProduct.comment1|h}-->"><!--{$arrProduct.comment1|h}--></a></dd>
-                            </dl>
-                        <!--{/if}-->
-                        <!--{* ▲メーカーURL *}-->
-
-                        <dl class="relative_cat">
-                            <dt>関連カテゴリ：</dt>
-                            <!--{section name=r loop=$arrRelativeCat}-->
-                                <dd>
-                                    <!--{section name=s loop=$arrRelativeCat[r]}-->
-                                        <a href="<!--{$smarty.const.ROOT_URLPATH}-->products/list.php?category_id=<!--{$arrRelativeCat[r][s].category_id}-->"><!--{$arrRelativeCat[r][s].category_name|h}--></a>
-                                        <!--{if !$smarty.section.s.last}--><!--{$smarty.const.SEPA_CATNAVI}--><!--{/if}-->
-                                    <!--{/section}-->
-                                </dd>
-                            <!--{/section}-->
-                        </dl>
-
-                        <dl class="product_code">
-                            <dt>商品コード：</dt>
-                            <dd>
-                                <span id="product_code_default">
-                                    <!--{if $arrProduct.product_code_min == $arrProduct.product_code_max}-->
-                                        <!--{$arrProduct.product_code_min|h}-->
-                                    <!--{else}-->
-                                        <!--{$arrProduct.product_code_min|h}-->～<!--{$arrProduct.product_code_max|h}-->
-                                    <!--{/if}-->
-                                </span><span id="product_code_dynamic"></span>
-                            </dd>
-                        </dl>
-
                         <!--{* ★詳細メインコメント★ *}-->
                         <div class="main_comment"><!--{$arrProduct.main_comment|nl2br_html}--></div>
                     </div>
@@ -272,6 +229,61 @@
     </form>
     <!--詳細ここまで-->
 
+
+    
+    <div id="underphotobloc" class="clearfix panel panel-default">
+        
+        <div class="col-sm-6 col-xs-12">
+            <dl class="relative_cat">
+                <dt>関連カテゴリ：</dt>
+                <!--{section name=r loop=$arrRelativeCat}-->
+                    <dd>
+                        <!--{section name=s loop=$arrRelativeCat[r]}-->
+                            <a href="<!--{$smarty.const.ROOT_URLPATH}-->products/list.php?category_id=<!--{$arrRelativeCat[r][s].category_id}-->"><!--{$arrRelativeCat[r][s].category_name|h}--></a>
+                            <!--{if !$smarty.section.s.last}--><!--{$smarty.const.SEPA_CATNAVI}--><!--{/if}-->
+                        <!--{/section}-->
+                    </dd>
+                <!--{/section}-->
+            </dl>
+        </div>
+        
+        <div class="col-sm-6 col-xs-12">
+            <!--{* ▼メーカー *}-->
+            <!--{if $arrProduct.maker_name|strlen >= 1}-->
+                <dl class="maker">
+                    <dt>メーカー：</dt>
+                    <dd><!--{$arrProduct.maker_name|h}--></dd>
+                </dl>
+            <!--{/if}-->
+            <!--{* ▲メーカー *}-->
+
+            <!--{* ▼メーカーURL *}-->
+            <!--{if $arrProduct.comment1|strlen >= 1}-->
+                <dl class="comment1">
+                    <dt>メーカーURL：</dt>
+                    <dd><a href="<!--{$arrProduct.comment1|h}-->"><!--{$arrProduct.comment1|h}--></a></dd>
+                </dl>
+            <!--{/if}-->
+            <!--{* ▲メーカーURL *}-->
+        </div>
+
+        <div class="col-sm-6 col-xs-12">
+            <dl class="product_code">
+                <dt>商品コード：</dt>
+                <dd>
+                    <span id="product_code_default">
+                        <!--{if $arrProduct.product_code_min == $arrProduct.product_code_max}-->
+                            <!--{$arrProduct.product_code_min|h}-->
+                        <!--{else}-->
+                            <!--{$arrProduct.product_code_min|h}-->～<!--{$arrProduct.product_code_max|h}-->
+                        <!--{/if}-->
+                    </span><span id="product_code_dynamic"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+
     <!--{* ▼サブコメント *}-->
     <!--{section name=cnt loop=$smarty.const.PRODUCTSUB_MAX}-->
         <!--{assign var=key value="sub_title`$smarty.section.cnt.index+1`"}-->
@@ -279,7 +291,7 @@
         <!--{assign var=ckey value="sub_comment`$smarty.section.cnt.index+1`"}-->
         
         <!--{if $arrProduct[$key]|strlen >= 1 or $arrProduct[$ckey]|strlen >= 1}-->
-            <div class="sub_area clearfix">
+            <div class="sub_area clearfix panel panel-default ">
                 <!--{if $arrProduct[$key]|strlen >= 1}-->
                 <h3><!--★サブタイトル★--><!--{$arrProduct[$key]|h}--></h3>
                 <!--{/if}-->
@@ -292,18 +304,18 @@
     <!--{* ▲サブコメント *}-->
 
     <!--{* ▼お客様の声 *}-->
-    <div id="customervoice_area">
+    <div id="customervoice_area" class="clearfix panel">
         <div class="well-sm bg-warning panel-heading">
             <h2 class="text-warning"><span class="fa fa-comment fa-flip-horizontal"></span> 商品レビュー</h2>
         </div>
 
-        <div class="review_bloc clearfix bg-def panel-body">
+        <div class="review_bloc clearfix bg-def panel-body panel-default text-center">
             <p>この商品に対するご感想をぜひお寄せください。</p>
             <div class="review_btn">
                 <!--{if count($arrReview) < $smarty.const.REVIEW_REGIST_MAX}-->
                     <a href="./review.php"
                         onclick="eccube.openWindow('./review.php?product_id=<!--{$arrProduct.product_id}-->','review','600','640'); return false;"
-                        target="_blank" class="btn btn-default btn-sm">
+                        target="_blank" class="btn btn-warning btn-lg">
                         <span class="fa fa-pencil-square-o"></span> 新規コメントを書き込む
                     </a>
                 <!--{/if}-->
@@ -314,12 +326,15 @@
             <ul class="media-list panel-body">
                 <!--{section name=cnt loop=$arrReview}-->
                     <li class="media">
-                        <span class="fa fa-comment-o fa-flip-horizontal pull-left"></span>
-                        <div class="media-body">
-                            <h4 class="voicetitle media-heading"><!--{$arrReview[cnt].title|h}--></h4>
-                            <p class="voicedate"><!--{$arrReview[cnt].create_date|sfDispDBDate:false}-->　投稿者：<!--{if $arrReview[cnt].reviewer_url}--><a href="<!--{$arrReview[cnt].reviewer_url}-->" target="_blank"><!--{$arrReview[cnt].reviewer_name|h}--></a><!--{else}--><!--{$arrReview[cnt].reviewer_name|h}--><!--{/if}-->　おすすめレベル：<span class="recommend_level"><!--{assign var=level value=$arrReview[cnt].recommend_level}--><!--{$arrRECOMMEND[$level]|h}--></span></p>
-                            <p class="voicecomment"><!--{$arrReview[cnt].comment|h|nl2br}--></p>
-                        <hr />
+                        <div class="panel panel-primary">
+                            <div class="voicetitle panel-heading">
+                                <span class="fa fa-user"></span>
+                                <!--{$arrReview[cnt].title|h}-->
+                                <!--{$arrReview[cnt].create_date|sfDispDBDate:false}-->　
+                                投稿者：<!--{if $arrReview[cnt].reviewer_url}--><a href="<!--{$arrReview[cnt].reviewer_url}-->" target="_blank"><!--{$arrReview[cnt].reviewer_name|h}--></a><!--{else}--><!--{$arrReview[cnt].reviewer_name|h}--><!--{/if}-->
+                                おすすめレベル：<span class="recommend_level"><!--{assign var=level value=$arrReview[cnt].recommend_level}--><!--{$arrRECOMMEND[$level]|h}--></span>
+                            </div>
+                            <div class="panel-body"><!--{$arrReview[cnt].comment|h|nl2br}--></div>
                         </div>
                     </li>
                 <!--{/section}-->

@@ -1,6 +1,5 @@
 frontparts/bloc/breadcrumblist.tpl
 plugin/*
 site_maintenance/*
-
-
 test\.html
+user_data/*
