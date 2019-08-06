@@ -71,11 +71,10 @@
 <!--{/strip}-->
 </head>
 
-<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.js"></script>
-<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.legacy.js"></script>
-
-<script src="<!--{$TPL_URLPATH}-->js/jquery.plugin.min.js"></script>
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js" defer></script>
+<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.js" defer></script>
+<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.legacy.js" defer></script>
+<script src="<!--{$TPL_URLPATH}-->js/jquery.plugin.min.js" defer></script>
 
 <script type="text/javascript">//<![CDATA[
     <!--{$tpl_javascript}-->
@@ -86,8 +85,8 @@
 //]]></script>
 
 <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" defer></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" defer></script>
 <![endif]-->
 
 <!-- ▼BODY部 スタート --> 
