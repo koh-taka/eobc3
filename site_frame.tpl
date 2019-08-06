@@ -71,9 +71,9 @@
 <!--{/strip}-->
 </head>
 
-<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js" defer></script>
-<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.js" defer></script>
-<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.legacy.js" defer></script>
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.js"></script>
+<script type="text/javascript" src="<!--{$smarty.const.ROOT_URLPATH}-->js/eccube.legacy.js"></script>
 <script src="<!--{$TPL_URLPATH}-->js/jquery.plugin.min.js" defer></script>
 
 <script type="text/javascript">//<![CDATA[
