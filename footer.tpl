@@ -12,10 +12,6 @@
     <div id="footer_wrap">
         <div id="footer" class="container">
             <div id="pagetop" class="pull-right"><a href="#top">このページの先頭へ</a></div>
-            <div id="copyright">Copyright ©
-                &nbsp;<!--{if $smarty.const.RELEASE_YEAR != $smarty.now|date_format:"%Y"}--><!--{$smarty.const.RELEASE_YEAR}-->-<!--{/if}--><!--{$smarty.now|date_format:"%Y"}-->
-                &nbsp;<!--{$arrSiteInfo.shop_name_eng|default:$arrSiteInfo.shop_name|h}--> All rights reserved.
-            </div>
         </div>
     </div>
     <!--{* ▼FooterBottom COLUMN*}-->
@@ -36,5 +32,21 @@
     <!--{/if}-->
     <!--{* ▲FooterBottom COLUMN*}-->
 
+<nav class="navbar navbar-inverse" id="footer-bottom">
+	<div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Copyright ©
+                &nbsp;<!--{if $smarty.const.RELEASE_YEAR != $smarty.now|date_format:"%Y"}--><!--{$smarty.const.RELEASE_YEAR}-->-<!--{/if}--><!--{$smarty.now|date_format:"%Y"}-->
+                &nbsp;<!--{$arrSiteInfo.shop_name_eng|default:$arrSiteInfo.shop_name|h}--> All rights reserved.
+            </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="<!--{$smarty.const.ROOT_URLPATH}-->abouts/<!--{$smarty.const.DIR_INDEX_PATH}-->" class="<!--{if $tpl_page_class_name == "LC_Page_Abouts"}--> active<!--{/if}-->">当サイトについて</a>
+            <li><a href="<!--{$smarty.const.HTTPS_URL}-->contact/<!--{$smarty.const.DIR_INDEX_PATH}-->" class="<!--{if $tpl_page_class_name == "LC_Page_Contact" || $tpl_page_class_name == "LC_Page_Contact_Complete"}--> active<!--{/if}-->">お問い合わせ</a>
+            <li><a href="<!--{$smarty.const.ROOT_URLPATH}-->order/<!--{$smarty.const.DIR_INDEX_PATH}-->" class="<!--{if $tpl_page_class_name == "LC_Page_Order"}--> active<!--{/if}-->">特定商取引法に基づく表記</a>
+            <li><a href="<!--{$smarty.const.ROOT_URLPATH}-->guide/privacy.php" class="<!--{if $tpl_page_class_name == "LC_Page_Guide_Privacy"}--> active<!--{/if}-->">プライバシーポリシー</a>
+        </ul>
+	</div>
+</nav>
 <!--{/strip}-->
 <!--▲FOOTER-->
