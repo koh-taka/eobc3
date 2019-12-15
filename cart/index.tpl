@@ -83,7 +83,7 @@
                                 <div class="clearfix">
                                     <div class="delete-cart col-xs-12 text-right">
                                         <a class="btn-delete" href="?" onclick="eccube.fnFormModeSubmit('form<!--{$key|h}-->', 'delete', 'cart_no', '<!--{$item.cart_no|h}-->'); return false;">
-                                            <span class="fa fa-trash-o fa-lg"></span><span class="hidden-xs"> <small>カートから削除</small></span>
+                                            <span class="fa fa-trash-o fa-lg"></span><span class="hidden-xs"> <small><i class="fa fa-times-circle"></i> カートから削除</small></span>
                                         </a>
                                     </div>
 
