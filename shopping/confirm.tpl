@@ -315,3 +315,37 @@
         </form>
     </div>
 </div>
+
+<!--{*
+ * 注文情報（個人情報なし）をsessionStorage格納し(他ドメインの決済ページを介しても)注文完了ページに渡す
+ *}-->
+<!--{strip}-->
+<script>
+var test_utm = sessionStorage.utm;
+var cache_order_confirm = (function () {
+    var item_cache = [];
+    <!--{foreach from=$arrCartItems item=v }-->
+        item_cache.push({
+            'id': "<!--{$v.productsClass.product_id|h}-->",
+            'name': "<!--{$v.productsClass.name|h}-->",
+            'variant': "<!--{$v.productsClass.classcategory_name1|h}-->",
+            'price': <!--{$v.price_inctax}-->,
+            'quantity': <!--{$v.quantity}-->
+        });
+    <!--{/foreach}-->
+    <!--{* af_get_utmから渡されたgoogle analyticsコードをcampaignに入れる *}-->
+    var aff_utm = (sessionStorage.utm) ? sessionStorage.utm : "";
+    var gtag_purchase = {
+        "transaction_id": "<!--{$transactionid}-->",
+        "affiliation": aff_utm,
+        "value": <!--{$tpl_total_inctax[$cartKey]}-->,
+        "currency": "JPY",
+        "shipping": <!--{$arrForm.deliv_fee}--> + <!--{$arrForm.charge}-->,
+        "items": item_cache,
+        "checkout_option": "<!--{$arrForm.payment_method|h}-->"
+    };
+    sessionStorage.gtag_purchase = JSON.stringify(gtag_purchase);
+    return gtag_purchase;
+}());
+</script>
+<!--{/strip}-->

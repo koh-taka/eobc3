@@ -53,3 +53,56 @@
 
     </div>
 </div>
+
+<!--{*
+ * 注文確認ページから来た注文情報（個人情報なし）を解凍してgoogle analyticsなどに与える
+ *}-->
+<!--{strip}-->
+<script>
+var load_order_cache_complete = (function() {
+	if(!sessionStorage.gtag_purchase){return false;}
+	gtp = JSON.parse( sessionStorage.gtag_purchase );
+	
+	<!--{* order_idが取得できるなら、transactionではなく、注文番号を入れる *}-->
+	var oid = "<!--{$arrMyOrder.order_id|h}-->";
+	if(oid != ""){ gtp.transaction_id = oid; }
+
+    gtag('event', 'purchase', gtp);
+    sessionStorage.removeItem("gtag_purchase");
+
+    return oid;
+}());
+</script>
+<!--{/strip}-->
+
+<!--{*
+
+order_idを取得したい場合、本体のカスタマイズが必要。
+
+path:
+data/class_extends/page_extends/shopping/LC_Page_Shopping_Complete_Ex.php
+
+以下を LC_Page_Shopping_Complete_Ex 内に差し込む:
+
+    /**
+     * Page のアクション.
+     *
+     * @return void
+     */
+    public function action()
+    {
+    $this->arrInfo = SC_Helper_DB_Ex::sfGetBasisData();
+    
+        // 注文情報を取得
+        $objPurchase = new SC_Helper_Purchase();
+        $arrOrder = $objPurchase->getOrder($_SESSION['order_id']);
+ 
+        // 必要な値を完了画面に引き渡す
+        $this->arrMyOrder = array(
+            'order_id'  => $arrOrder['order_id'], // 注文番号
+            'price'     => $arrOrder['subtotal'] - $arrOrder['tax'], // 小計-消費税
+        );
+    }
+
+
+ *}-->
