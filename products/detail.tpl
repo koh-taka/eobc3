@@ -253,10 +253,12 @@
 
     <!--{if $arrProduct.sub_comment1|strlen > 1}-->
         <div class="clearfix panel panel-default sub_comment comment1">
-            <!--{if $arrProduct.sub_title1|strlen > 1}-->
-                <h4 class="bg-primary"><!--{$arrProduct.sub_title1|h}--></h4>
-            <!--{/if}-->
-            <div class="sub_area panel-body"><!--{$arrProduct.sub_comment1|nl2br_html}--></div>
+            <div class="sub_area panel-body">
+                <!--{if $arrProduct.sub_title1|strlen > 1}-->
+                    <h4 class="bg-info"><!--{$arrProduct.sub_title1|h}--></h4>
+                <!--{/if}-->
+                <!--{$arrProduct.sub_comment1|nl2br_html}-->
+            </div>
         </div>
     <!--{/if}-->
 
@@ -266,7 +268,7 @@
         <!--{if $arrProduct.sub_comment2|strlen > 1}-->
         <div class="col-sm-6 col-xs-12">
             <!--{if $arrProduct.sub_title2|strlen > 1}-->
-                <h4 class="bg-primary"><!--{$arrProduct.sub_title2|h}--></h4>
+                <h4 class="bg-info"><!--{$arrProduct.sub_title2|h}--></h4>
             <!--{/if}-->
             <dl class="comment2"><dd><!--{$arrProduct.sub_comment2|nl2br_html}--></dd></dl>
         </div>
@@ -274,7 +276,7 @@
         <!--{if $arrProduct.sub_comment3|strlen > 1}-->
         <div class="col-sm-6 col-xs-12">
             <!--{if $arrProduct.sub_title3|strlen > 1}-->
-                <h4 class="bg-primary"><!--{$arrProduct.sub_title3|h}--></h4>
+                <h4 class="bg-info"><!--{$arrProduct.sub_title3|h}--></h4>
             <!--{/if}-->
             <dl class="comment3"><dd><!--{$arrProduct.sub_comment3|nl2br_html}--></dd></dl>
         </div>
@@ -339,10 +341,12 @@
 
     <!--{if $arrProduct.sub_comment4|strlen >= 1}-->
         <div class="clearfix panel panel-default sub_comment" id="sub_comment4">
-            <!--{if $arrProduct.sub_title4|strlen > 1}-->
-                <h4 class="bg-primary"><!--{$arrProduct.sub_title4|h}--></h4>
-            <!--{/if}-->
-            <div class="sub_area panel-body"><!--{$arrProduct.sub_comment4|nl2br_html}--></div>
+            <div class="sub_area panel-body">
+                <!--{if $arrProduct.sub_title4|strlen > 1}-->
+                    <h4 class="bg-info"><!--{$arrProduct.sub_title4|h}--></h4>
+                <!--{/if}-->
+                <!--{$arrProduct.sub_comment4|nl2br_html}-->
+            </div>
         </div>
     <!--{/if}-->
 

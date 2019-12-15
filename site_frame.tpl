@@ -14,7 +14,6 @@
 <!--{* 初期設定: SEO的に有用なタイトルを入れてください。 *}-->
 <!--{assign var='shopname' value="xxxxxxxxx"}-->
 <!--{* 初期設定: おわり *}-->
-
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# fb: http://ogp.me/ns/fb#">
 <script async src="https://www.googletagmanager.com/gtag/js?id=<!--{$ga_code|h}-->"></script>
@@ -23,7 +22,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=<!--{$smarty.const.CHAR_CODE}-->" />
-
 <!--{* SEOに寄せたタイトルを生成 *}-->
 <!--{if $tpl_subtitle|strlen >= 1}-->
     <!--{assign var='tit' value="`$tpl_subtitle` / `$shopname`"}-->
@@ -34,7 +32,6 @@
 <!--{/if}-->
 <title><!--{$tit|h}--></title>
 <meta property="og:title" content="<!--{$tit|h}-->">
-
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 
@@ -63,7 +60,6 @@
 
 <meta name="twitter:site" content="@<!--{$account_twitter|h}-->">
 <meta property="og:type" content="website" />
-
 <link rel="alternate" type="application/rss+xml" title="RSS" href="//<!--{$smarty.server.SERVER_NAME}-->/rss/<!--{$smarty.const.DIR_INDEX_PATH}-->" />
 
 <!--{if ($smarty.server.HTTPS != "") && ($smarty.server.HTTPS != "off")}-->
@@ -141,11 +137,8 @@
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false" defer></script>
     <!--{/if}-->
 <!--{/if}-->
-
 </head>
-
 <!-- ▼BODY部 スタート --> 
 <!--{include file='./site_main.tpl'}-->
 <!-- ▲BODY部 エンド -->
-
 </html>
