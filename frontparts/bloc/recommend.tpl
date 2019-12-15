@@ -21,7 +21,7 @@
                         </small>
                     </h2>
                 </div>
-                <div class="clearfix re_content">
+                <div class="re_content row clearfix">
                     <!--{foreach from=$arrBestProducts item=arrProduct name="recommend_products"}-->
                     <div class="col-sm-4 col-md-3">
                         <a href="<!--{$smarty.const.P_DETAIL_URLPATH}--><!--{$arrProduct.product_id|u}-->" class="thumbnail">
