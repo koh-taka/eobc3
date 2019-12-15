@@ -72,7 +72,7 @@
                         </div>
                         <div class="col-xs-4 col-sm-4 padding-none">
                             <p class="top">
-                                <a href="http://search.post.japanpost.jp/zipcode/" target="_blank"><span class="mini">郵便番号検索</span></a>
+                                <a href="//www.post.japanpost.jp/smt-zipcode/" target="_blank"><span class="mini">郵便番号検索</span></a>
                             </p>
                         </div>
                     </div>
