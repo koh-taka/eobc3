@@ -39,7 +39,7 @@
                     <ul class="nav navbar-nav navbar-right">       
                         <!--{if $smarty.session.customer}-->
                         <li class="mypage dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                             <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                 <!--{* 氏名を表示させる際は以下をコメントアウト *}-->
                                 <!--{* ようこそ <!--{$smarty.session.customer.name01}--><!--{$smarty.session.customer.name02}--> 様 *}-->
                                 ようこそ 会員様
@@ -79,7 +79,7 @@
                         </li>
                         <!--{else}-->
                         <li>
-                            <a href="<!--{$smarty.const.HTTPS_URL}-->mypage/login.php">
+                            <a class="btn btn-default" href="<!--{$smarty.const.HTTPS_URL}-->mypage/login.php">
                                 会員様はこちらから<br>
                                 <span class="font-size-md">
                                     <span class="glyphicon glyphicon-log-in"></span> MYページにログイン<span class="caret"></span>
