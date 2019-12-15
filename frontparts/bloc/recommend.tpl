@@ -21,7 +21,7 @@
                         </small>
                     </h2>
                 </div>
-                <div class="clearfix">
+                <div class="clearfix re_content">
                     <!--{foreach from=$arrBestProducts item=arrProduct name="recommend_products"}-->
                     <div class="col-sm-4 col-md-3">
                         <a href="<!--{$smarty.const.P_DETAIL_URLPATH}--><!--{$arrProduct.product_id|u}-->" class="thumbnail">
@@ -40,4 +40,17 @@
             </div>
         </div>
     <!--{/if}-->
+<style>
+#recommend .re_content {
+    display: flex;
+    flex-wrap: wrap;
+}
+#recommend .label.label-warning {
+    display: inline-block;
+    max-width: 100%;
+}
+#recommend .row::before,#recommend .row::after{
+    display: none;
+}
+</style>
 <!--{/strip}-->
