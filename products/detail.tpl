@@ -229,7 +229,36 @@
     </form>
     <!--詳細ここまで-->
 
+    <!--{if $arrProduct.sub_comment1|strlen > 1}-->
+        <div class="clearfix panel panel-default sub_comment comment1">
+            <!--{if $arrProduct.sub_title1|strlen > 1}-->
+                <h4 class="bg-primary"><!--{$arrProduct.sub_title1|h}--></h4>
+            <!--{/if}-->
+            <div class="sub_area panel-body"><!--{$arrProduct.sub_comment1|nl2br_html}--></div>
+        </div>
+    <!--{/if}-->
 
+    <!--{* 詳細-サブコメント2と3の内容 *}-->
+    <!--{if $arrProduct.sub_comment2|strlen > 1 || $arrProduct.sub_comment3|strlen > 1}-->
+    <div class="clearfix panel panel-default sub_comment">
+        <!--{if $arrProduct.sub_comment2|strlen > 1}-->
+        <div class="col-sm-6 col-xs-12">
+            <!--{if $arrProduct.sub_title2|strlen > 1}-->
+                <h4 class="bg-primary"><!--{$arrProduct.sub_title2|h}--></h4>
+            <!--{/if}-->
+            <dl class="comment2"><dd><!--{$arrProduct.sub_comment2|nl2br_html}--></dd></dl>
+        </div>
+        <!--{/if}-->
+        <!--{if $arrProduct.sub_comment3|strlen > 1}-->
+        <div class="col-sm-6 col-xs-12">
+            <!--{if $arrProduct.sub_title3|strlen > 1}-->
+                <h4 class="bg-primary"><!--{$arrProduct.sub_title3|h}--></h4>
+            <!--{/if}-->
+            <dl class="comment3"><dd><!--{$arrProduct.sub_comment3|nl2br_html}--></dd></dl>
+        </div>
+        <!--{/if}-->
+    </div>
+    <!--{/if}-->
     
     <div id="underphotobloc" class="clearfix panel panel-default">
         
@@ -244,6 +273,21 @@
                         <!--{/section}-->
                     </dd>
                 <!--{/section}-->
+            </dl>
+        </div>
+
+        <div class="col-sm-6 col-xs-12">
+            <dl class="product_code">
+                <dt>商品コード：</dt>
+                <dd>
+                    <span id="product_code_default">
+                        <!--{if $arrProduct.product_code_min == $arrProduct.product_code_max}-->
+                            <!--{$arrProduct.product_code_min|h}-->
+                        <!--{else}-->
+                            <!--{$arrProduct.product_code_min|h}-->～<!--{$arrProduct.product_code_max|h}-->
+                        <!--{/if}-->
+                    </span><span id="product_code_dynamic"></span>
+                </dd>
             </dl>
         </div>
         
@@ -266,41 +310,20 @@
             <!--{/if}-->
             <!--{* ▲メーカーURL *}-->
         </div>
-
-        <div class="col-sm-6 col-xs-12">
-            <dl class="product_code">
-                <dt>商品コード：</dt>
-                <dd>
-                    <span id="product_code_default">
-                        <!--{if $arrProduct.product_code_min == $arrProduct.product_code_max}-->
-                            <!--{$arrProduct.product_code_min|h}-->
-                        <!--{else}-->
-                            <!--{$arrProduct.product_code_min|h}-->～<!--{$arrProduct.product_code_max|h}-->
-                        <!--{/if}-->
-                    </span><span id="product_code_dynamic"></span>
-                </dd>
-            </dl>
-        </div>
     </div>
 
 
     <!--{* ▼サブコメント *}-->
-    <!--{section name=cnt loop=$smarty.const.PRODUCTSUB_MAX}-->
-        <!--{assign var=key value="sub_title`$smarty.section.cnt.index+1`"}-->
-        <!--{assign var=ikey value="sub_image`$smarty.section.cnt.index+1`"}-->
-        <!--{assign var=ckey value="sub_comment`$smarty.section.cnt.index+1`"}-->
-        
-        <!--{if $arrProduct[$key]|strlen >= 1 or $arrProduct[$ckey]|strlen >= 1}-->
-            <div class="sub_area clearfix panel panel-default ">
-                <!--{if $arrProduct[$key]|strlen >= 1}-->
-                <h3><!--★サブタイトル★--><!--{$arrProduct[$key]|h}--></h3>
-                <!--{/if}-->
-                <!--{if $arrProduct[$ckey]|strlen >= 1}-->
-                <p class="subtext"><!--★サブテキスト★--><!--{$arrProduct[$ckey]|nl2br_html}--></p>
-                <!--{/if}-->
-            </div>
-        <!--{/if}-->
-    <!--{/section}-->
+
+    <!--{if $arrProduct.sub_comment4|strlen >= 1}-->
+        <div class="clearfix panel panel-default sub_comment" id="sub_comment4">
+            <!--{if $arrProduct.sub_title4|strlen > 1}-->
+                <h4 class="bg-primary"><!--{$arrProduct.sub_title4|h}--></h4>
+            <!--{/if}-->
+            <div class="sub_area panel-body"><!--{$arrProduct.sub_comment4|nl2br_html}--></div>
+        </div>
+    <!--{/if}-->
+
     <!--{* ▲サブコメント *}-->
 
     <!--{* ▼お客様の声 *}-->
@@ -316,7 +339,7 @@
                     <a href="./review.php"
                         onclick="eccube.openWindow('./review.php?product_id=<!--{$arrProduct.product_id}-->','review','600','640'); return false;"
                         target="_blank" class="btn btn-warning btn-lg">
-                        <span class="fa fa-pencil-square-o"></span> 新規コメントを書き込む
+                        <span class="fa fa-pencil-square-o"></span> レビューを書き込む
                     </a>
                 <!--{/if}-->
             </div>
