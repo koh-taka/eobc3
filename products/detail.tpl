@@ -179,7 +179,29 @@
                                     <div class="quantity col-xs-6 col-sm-5">
                                         <div class="input-group<!--{if $arrErr.quantity != ""}--> has-error<!--{/if}-->">
                                             <span class="input-group-addon">数量</span>
-                                            <input type="number" id="cart-quantity" class="box60 form-control" name="quantity" value="<!--{$arrForm.quantity.value|default:1|h}-->" maxlength="<!--{$smarty.const.INT_LEN}-->" min="1" style="<!--{$arrErr.quantity|sfGetErrorColor}-->" />
+                                            <select name="quantity" id="cart-quantity" class="box60 form-control">
+
+                                            <!--{if $arrProduct.stock_unlimited_max == 1}-->
+                                                <!--{assign var=qt value="`$smarty.const.INT_LEN+2`"}-->
+                                            <!--{else}-->
+                                                <!--{assign var=qt value="`$arrProduct.stock_max+1`"}-->
+                                            <!--{/if}-->
+
+                                            <!--{assign var=qt_sel value=$arrForm.quantity.value|default:1}-->
+
+                                            <!--{section name=qt_num loop=$qt start="1"}-->
+
+                                                <!--{if $smarty.section.qt_num.index === $qt_sel }-->
+                                                <option selected>
+                                                <!--{else}-->
+                                                <option>
+                                                <!--{/if}-->
+
+                                                    <!--{$smarty.section.qt_num.index|h}-->
+
+                                                </option>
+                                            <!--{/section}-->
+                                            </select>
                                         </div>
                                         <!--{if $arrErr.quantity != ""}-->
                                             <br /><label class="attention" for="cart-quantity"><!--{$arrErr.quantity}--></label>
