@@ -9,7 +9,7 @@
 
 <div id="undercolumn">
     <div id="undercolumn_cart">
-        <h2 class="title"><!--{$tpl_title|h}--></h2>
+        <h2 class="title">現在のカートの中</h2>
 
         <!--{if $smarty.const.USE_POINT !== false || count($arrProductsClass) > 0}-->
             <!--★ポイント案内★-->
@@ -65,13 +65,13 @@
                         <!--{/if}-->
                         <div class="list-group">
                             <div class="list-group-item">
-                                <!--{$purchasing_goods_name|h}-->の合計金額は「<span class="price"><!--{$tpl_total_inctax[$key]|number_format|h}-->円</span>」です。
+                                <!--{$purchasing_goods_name|h}-->の合計金額は「<span class="price"><!--{$tpl_total_inctax[$key]|number_format|h}-->円<small>(税込)</small></span>」です。
                                 <!--{if $key != $smarty.const.PRODUCT_TYPE_DOWNLOAD}-->
                                     <!--{if $arrInfo.free_rule > 0}-->
                                         <!--{if !$arrData[$key].is_deliv_free}-->
-                                            あと「<span class="price"><!--{$tpl_deliv_free[$key]|number_format|h}-->円</span>」で送料無料です！！
+                                            あと「<span class="price"><!--{$tpl_deliv_free[$key]|number_format|h}-->円</span>」で送料無料です！
                                         <!--{else}-->
-                                            現在、「<span class="attention">送料無料</span>」です！！
+                                            現在、「<span class="attention">送料無料</span>」です！
                                         <!--{/if}-->
                                     <!--{/if}-->
                                 <!--{/if}-->
@@ -155,7 +155,7 @@
                             <div class="row">
                                 <div class="col-md-3 hidden-xs hidden-sm">
                                     <!--{if $tpl_prev_url != ""}-->
-                                        <a href="<!--{$tpl_prev_url|h}-->" class="btn btn-default btn-block">お買い物を続ける</a>
+                                        <a href="<!--{$tpl_prev_url|h}-->" class="btn btn-default btn-block">お買物を続ける</a>
                                     <!--{/if}-->
                                 </div>
                             <!--{if strlen($tpl_error) == 0}-->
@@ -170,7 +170,7 @@
             <!--{/foreach}-->
             <!--{if $tpl_prev_url != ""}-->
             <div class="hidden-md hidden-lg">
-                <a href="<!--{$tpl_prev_url|h}-->" class="btn btn-default btn-block btn-sm">お買い物を続ける</a>
+                <a href="<!--{$tpl_prev_url|h}-->" class="btn btn-default btn-block btn-sm">お買物を続ける</a>
             </div>
             <!--{/if}-->
         <!--{else}-->
