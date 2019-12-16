@@ -40,17 +40,4 @@
             </div>
         </div>
     <!--{/if}-->
-<style>
-#recommend .re_content {
-    display: flex;
-    flex-wrap: wrap;
-}
-#recommend .label.label-warning {
-    display: inline-block;
-    max-width: 100%;
-}
-#recommend .row::before,#recommend .row::after{
-    display: none;
-}
-</style>
 <!--{/strip}-->
