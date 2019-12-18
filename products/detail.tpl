@@ -27,11 +27,11 @@
                         <!--{assign var=key value="main_image"}-->
                         <!--{if $arrProduct.main_large_image|strlen >= 1}-->
                         <a href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_large_image|h}-->" data-size="1200x1200">
-                            <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_large_image|h}-->" width="470" height="470" alt="<!--{$arrProduct.name|h}-->" class="picture img-responsive img-thumbnail center-block" />
+                            <img src="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_large_image|h}-->" width="470" height="470" alt="<!--{$arrProduct.name|h}-->, <!--{$arrProduct.comment3|h}-->" class="picture img-responsive img-thumbnail center-block" />
                         </a>
                         <!--{else}-->
                         <a href="<!--{$smarty.const.IMAGE_SAVE_URLPATH}--><!--{$arrProduct.main_image|h}-->" data-size="1200x1200">
-                            <img src="<!--{$arrFile[$key].filepath|h}-->" width="470" height="470" alt="solo - <!--{$arrProduct.name|h}-->" class="picture img-responsive img-thumbnail center-block" />
+                            <img src="<!--{$arrFile[$key].filepath|h}-->" width="470" height="470" alt="solo - <!--{$arrProduct.name|h}-->, <!--{$arrProduct.comment3|h}-->" class="picture img-responsive img-thumbnail center-block" />
                         </a>
                         <!--{/if}-->
                     </figure>
@@ -239,7 +239,7 @@
                                 </div>
                             <!--{/if}-->
                         </div>
-
+                        <hr>
                         <!--{* ★詳細メインコメント★ *}-->
                         <div class="main_comment"><!--{$arrProduct.main_comment|nl2br_html}--></div>
                     </div>
